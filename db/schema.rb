@@ -66,11 +66,12 @@ ActiveRecord::Schema.define(version: 20160227151925) do
     t.integer  "excurion_id"
     t.integer  "guide_id"
     t.integer  "turist_id"
-    t.text     "guide_point"
+    t.integer  "guide_point"
     t.integer  "excursion_point"
     t.text     "guide_description"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.text     "excursion_description"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   add_index "tours", ["excurion_id"], name: "index_tours_on_excurion_id"
