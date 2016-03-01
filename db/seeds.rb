@@ -72,12 +72,12 @@ puts "Loaded Tours!!!!"
 
 
 
-# 10.times do
-#     Monument_excursion.create(
-#         monument_id: Faker::Number.between(1, 10),
-#         excursion_id: Faker::Number.between(1, 5)
-#         )
-# end
-# puts "Loaded Monuments!!!!"
+10.times do
+    Monument_excursion.create(
+        monument_id: Faker::Number.between(1, 10),
+        excursion_id: Faker::Number.between(1, 5)
+        )
+end
+puts "Loaded Monuments!!!!"
 
 
