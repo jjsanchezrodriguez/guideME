@@ -16,7 +16,7 @@ end
 puts "Loaded Guides!!!!"
 
 10.times do
-	Turist.create(
+	Tourist.create(
         name: Faker::Name.name,
         email: Faker::Internet.email
     	)
@@ -61,7 +61,7 @@ puts "Loaded Offers!!!!"
     Tour.create(
         excurion_id: Faker::Number.between(1, 5),
         guide_id: Faker::Number.between(1, 10),
-        turist_id: Faker::Number.between(1, 10),
+        tourist_id: Faker::Number.between(1, 10),
         guide_point: Faker::Number.between(1, 5),
         excursion_point: Faker::Number.between(1, 5),
         guide_description: Faker::Lorem.paragraph,
@@ -72,12 +72,12 @@ puts "Loaded Tours!!!!"
 
 
 
-10.times do
-    Monument_excursion.create(
-        monument_id: Faker::Number.between(1, 10),
-        excursion_id: Faker::Number.between(1, 5)
-        )
-end
-puts "Loaded Monuments!!!!"
+# 10.times do
+#     Monument_excursion.create(
+#         monument_id: Faker::Number.between(1, 10),
+#         excursion_id: Faker::Number.between(1, 5)
+#         )
+# end
+# puts "Loaded Monuments!!!!"
 
 

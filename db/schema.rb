@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160227151925) do
+ActiveRecord::Schema.define(version: 20160301160347) do
 
   create_table "excursions", force: :cascade do |t|
     t.string   "name"
@@ -41,14 +41,6 @@ ActiveRecord::Schema.define(version: 20160227151925) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "monuments_excursions", id: false, force: :cascade do |t|
-    t.integer "monument_id"
-    t.integer "excursion_id"
-  end
-
-  add_index "monuments_excursions", ["excursion_id"], name: "index_monuments_excursions_on_excursion_id"
-  add_index "monuments_excursions", ["monument_id"], name: "index_monuments_excursions_on_monument_id"
-
   create_table "offers", force: :cascade do |t|
     t.integer  "excurion_id"
     t.integer  "guide_id"
@@ -62,10 +54,17 @@ ActiveRecord::Schema.define(version: 20160227151925) do
   add_index "offers", ["excurion_id"], name: "index_offers_on_excurion_id"
   add_index "offers", ["guide_id"], name: "index_offers_on_guide_id"
 
+  create_table "tourists", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "tours", force: :cascade do |t|
     t.integer  "excurion_id"
     t.integer  "guide_id"
-    t.integer  "turist_id"
+    t.integer  "tourist_id"
     t.integer  "guide_point"
     t.integer  "excursion_point"
     t.text     "guide_description"
@@ -76,13 +75,6 @@ ActiveRecord::Schema.define(version: 20160227151925) do
 
   add_index "tours", ["excurion_id"], name: "index_tours_on_excurion_id"
   add_index "tours", ["guide_id"], name: "index_tours_on_guide_id"
-  add_index "tours", ["turist_id"], name: "index_tours_on_turist_id"
-
-  create_table "turists", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+  add_index "tours", ["tourist_id"], name: "index_tours_on_tourist_id"
 
 end
