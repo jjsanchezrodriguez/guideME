@@ -30,7 +30,8 @@ puts "Loaded Turist!!!!"
         duration: Faker::Number.between(1, 4),
         price: Faker::Commerce.price,
         start: Faker::Time.forward(15, :morning),
-        description: Faker::Lorem.paragraph 
+        description: Faker::Lorem.paragraph,
+        monuments: Monument.offset(rand(1..10))
     	)
 end
 puts "Loaded Excursions!!!!"
@@ -71,13 +72,5 @@ end
 puts "Loaded Tours!!!!"
 
 
-
-# 10.times do
-#     Monument_excursion.create(
-#         monument_id: Faker::Number.between(1, 10),
-#         excursion_id: Faker::Number.between(1, 5)
-#         )
-# end
-# puts "Loaded Monuments!!!!"
 
 

@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20160301160347) do
     t.float    "price"
     t.time     "start"
     t.text     "description"
+    t.integer  "monuments"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
