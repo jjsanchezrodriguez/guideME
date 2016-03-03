@@ -1,0 +1,25 @@
+
+<h1>Excusion</h1>
+
+<ul>
+  
+    <li>     <%= @excursion.id %>   </li>
+    <li>     <%= @excursion.name %>   </li>
+    <li>     <%= @excursion.duration %>   </li>
+    <li>     <%= @excursion.price %>   </li>
+    <li>     <%= @excursion.start %>   </li>
+    <li>     <%= @excursion.description %>   </li>
+
+  
+
+<h1>Offers</h1>
+
+<ul>
+  <% @offers.each do |offer| %>
+    <li>     <%=  offer.excursion_id %>   </li>
+    <li>     <%=  offer.guide_id %>   </li>
+    <li>     <%=  offer.language %>   </li>
+    <li>     <%=  offer.date %>   </li>
+    <li>     <%=  offer.available %>   </li>
+  <% end %>
+</ul>

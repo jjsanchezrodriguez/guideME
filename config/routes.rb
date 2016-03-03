@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  
+  root to: "excursions#index"
 
   resources :guides do
       resources :offers, only:[:index]

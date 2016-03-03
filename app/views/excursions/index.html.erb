@@ -1,0 +1,9 @@
+<h1>Excursions</h1>
+
+<ul>
+  <% @excursions.each do |excursion| %>
+    <li>
+       <%= link_to excursion.name, excursion_path(excursion) %>
+    </li>
+  <% end %>
+</ul>

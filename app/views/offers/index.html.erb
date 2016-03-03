@@ -1,0 +1,11 @@
+<h1>Offers</h1>
+
+<ul>
+  <% @offers.each do |offer| %>
+    <li>     <%=  offer.excusion_id %>   </li>
+    <li>     <%=  offer.guide_id %>   </li>
+    <li>     <%=  offer.language %>   </li>
+    <li>     <%=  offer.date %>   </li>
+    <li>     <%=  offer.available %>   </li>
+  <% end %>
+</ul>
