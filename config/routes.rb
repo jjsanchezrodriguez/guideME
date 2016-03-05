@@ -11,10 +11,12 @@ Rails.application.routes.draw do
   end
 
   resources :guides, only:[]  do
-    resources :excusions, only:[]  do
+    resources :excursions, only:[]  do
       resources :offers
     end  
   end
+
+  post '/excursions/date' =>'excursions#index'
 
   # resources :tourist  do
   #   resources :excursions

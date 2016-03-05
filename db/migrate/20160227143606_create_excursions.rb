@@ -4,8 +4,7 @@ class CreateExcursions < ActiveRecord::Migration
     	t.string  :name
     	t.string  :duration
     	t.float   :price
-    	t.time 	  :start
-      t.integer :monuments
+    	t.date 	  :start
     	t.text	  :description 
       t.timestamps null: false
     end

@@ -1,7 +1,7 @@
 class CreateOffers < ActiveRecord::Migration
   def change
     create_table :offers do |t|
-    	t.belongs_to :excurion, index: true
+    	t.belongs_to :excursion, index: true
     	t.belongs_to :guide, index: true
     	t.string     :language
     	t.date       :date

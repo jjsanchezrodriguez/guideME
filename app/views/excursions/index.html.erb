@@ -1,4 +1,20 @@
+
+<%= display_flash_message%>
 <h1>Excursions</h1>
+
+<!-- para consultar las excursiones entre dos fecas -->
+<%= form_tag(excursions_date_path, method: "post") do %>
+
+    <%= label_tag("Initial_date") %>
+    <%= date_field_tag(:init_date) %> 
+    
+
+    <%= label_tag("Final_date") %>
+    <%= date_field_tag(:final_date) %>
+    
+    <%= submit_tag("Search!!!") %>
+<% end %>
+<!-- Para mostrar las excursiones-->
 
 <ul>
   <% @excursions.each do |excursion| %>

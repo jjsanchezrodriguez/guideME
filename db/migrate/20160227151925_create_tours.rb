@@ -1,7 +1,7 @@
 class CreateTours < ActiveRecord::Migration
   def change
     create_table :tours do |t|
-    	t.belongs_to :excurion, index: true
+    	t.belongs_to :excursion, index: true
     	t.belongs_to :guide, index: true
     	t.belongs_to :tourist, index: true
     	t.integer :guide_point

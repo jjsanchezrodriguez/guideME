@@ -23,19 +23,6 @@ puts "Loaded Guides!!!!"
 end
 puts "Loaded Turist!!!!"
 
-
-5.times do
-	Excursion.create(
-        name: Faker::Name.name,
-        duration: Faker::Number.between(1, 4),
-        price: Faker::Commerce.price,
-        start: Faker::Time.forward(15, :morning),
-        description: Faker::Lorem.paragraph,
-        monuments: Monument.offset(rand(1..10))
-    	)
-end
-puts "Loaded Excursions!!!!"
-
 10.times do
     Monument.create(
         name: Faker::Name.name,
@@ -47,9 +34,23 @@ puts "Loaded Excursions!!!!"
 end
 puts "Loaded Monuments!!!!"
 
+5.times do
+	Excursion.create(
+        name: Faker::Name.name,
+        duration: Faker::Number.between(1, 4),
+        price: Faker::Commerce.price, 
+        start: Faker::Date.forward(15),
+        description: Faker::Lorem.paragraph,
+        monuments: Monument.offset(rand(1..10))
+    	)
+end
+puts "Loaded Excursions!!!!"
+
+
+
 10.times do
     Offer.create(
-        excurion_id: Faker::Number.between(1, 5),
+        excursion_id: Faker::Number.between(1, 5),
         guide_id: Faker::Number.between(1, 10),
         language: Faker::Address.country_code,
         date: Faker::Date.forward(15),
@@ -60,7 +61,7 @@ puts "Loaded Offers!!!!"
 
 10.times do
     Tour.create(
-        excurion_id: Faker::Number.between(1, 5),
+        excursion_id: Faker::Number.between(1, 5),
         guide_id: Faker::Number.between(1, 10),
         tourist_id: Faker::Number.between(1, 10),
         guide_point: Faker::Number.between(1, 5),
@@ -70,7 +71,3 @@ puts "Loaded Offers!!!!"
         )
 end
 puts "Loaded Tours!!!!"
-
-
-
-

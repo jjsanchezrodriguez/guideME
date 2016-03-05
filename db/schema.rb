@@ -17,19 +17,26 @@ ActiveRecord::Schema.define(version: 20160301160347) do
     t.string   "name"
     t.string   "duration"
     t.float    "price"
-    t.time     "start"
+    t.date     "start"
     t.text     "description"
-    t.integer  "monuments"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
+  create_table "excursions_monuments", id: false, force: :cascade do |t|
+    t.integer "monument_id"
+    t.integer "excursion_id"
+  end
+
+  add_index "excursions_monuments", ["excursion_id"], name: "index_excursions_monuments_on_excursion_id"
+  add_index "excursions_monuments", ["monument_id"], name: "index_excursions_monuments_on_monument_id"
+
   create_table "guides", force: :cascade do |t|
-    t.string   "name"
-    t.string   "phone"
-    t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",       default: "", null: false
+    t.string   "phone",      default: "", null: false
+    t.string   "email",      default: "", null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "monuments", force: :cascade do |t|
@@ -43,16 +50,16 @@ ActiveRecord::Schema.define(version: 20160301160347) do
   end
 
   create_table "offers", force: :cascade do |t|
-    t.integer  "excurion_id"
+    t.integer  "excursion_id"
     t.integer  "guide_id"
     t.string   "language"
     t.date     "date"
     t.integer  "available"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
-  add_index "offers", ["excurion_id"], name: "index_offers_on_excurion_id"
+  add_index "offers", ["excursion_id"], name: "index_offers_on_excursion_id"
   add_index "offers", ["guide_id"], name: "index_offers_on_guide_id"
 
   create_table "tourists", force: :cascade do |t|
@@ -63,7 +70,7 @@ ActiveRecord::Schema.define(version: 20160301160347) do
   end
 
   create_table "tours", force: :cascade do |t|
-    t.integer  "excurion_id"
+    t.integer  "excursion_id"
     t.integer  "guide_id"
     t.integer  "tourist_id"
     t.integer  "guide_point"
@@ -74,7 +81,7 @@ ActiveRecord::Schema.define(version: 20160301160347) do
     t.datetime "updated_at",            null: false
   end
 
-  add_index "tours", ["excurion_id"], name: "index_tours_on_excurion_id"
+  add_index "tours", ["excursion_id"], name: "index_tours_on_excursion_id"
   add_index "tours", ["guide_id"], name: "index_tours_on_guide_id"
   add_index "tours", ["tourist_id"], name: "index_tours_on_tourist_id"
 

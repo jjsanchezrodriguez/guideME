@@ -36,6 +36,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem "pry-rails"
 gem "rails-erd"  #para comprobar el modelo
 gem "faker"		 #para los seeds
+#gem "papeclic"
 
 #-------------------------------
 
