@@ -1,0 +1,28 @@
+<%= form_for @excursion do |f|%>
+	<div class="name-container">
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	</div>
+
+	<div class="duration-container">
+		<%= f.label :duration %>
+		<%= f.text_field :duration %>
+	</div>
+
+	<div class="price-container">
+		<%= f.label :price %>
+		<%= f.text_field :price %>
+	</div>
+
+	<div class="start-container">
+		<%= f.label :start %>
+		<%= f.date_field :start %>
+	</div>
+
+	<div class="description-container">
+		<%= f.label :description %>
+		<%= f.text_field :description %>
+	</div>
+
+	<%= f.submit "Submit" %>
+<%end%>

@@ -1,19 +1,16 @@
-
 <h1>Excursion</h1>
-
 <ul>
-  
     <li>     <%= @excursion.id %>   </li>
     <li>     <%= @excursion.name %>   </li>
     <li>     <%= @excursion.duration %>   </li>
     <li>     <%= @excursion.price %>   </li>
     <li>     <%= @excursion.start %>   </li>
     <li>     <%= @excursion.description %>   </li>
+</ul>
 
-  
+<%= link_to "Back to Excursions", excursions_path %>  
 
 <h1>Offers</h1>
-
 <ul>
   <% @offers.each do |offer| %>
     <li>     <%=  offer.excursion_id %>   </li>
@@ -23,3 +20,4 @@
     <li>     <%=  offer.available %>   </li>
   <% end %>
 </ul>
+

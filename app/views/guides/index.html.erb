@@ -4,6 +4,9 @@
   <% @guides.each do |guide| %>
     <li>
       <%= link_to guide.name, guide_path(guide) %>
+       <%= link_to "New Guide", new_guide_path %>
+       <%= link_to("Edit Guide", edit_guide_path(guide)) %>
+       <%= link_to("Delete Guide", guide_path(guide), method: :delete, data:{confirm: "Are you sure?"}) %>
     </li>
   <% end %>
 </ul>

@@ -33,8 +33,8 @@ ActiveRecord::Schema.define(version: 20160301160347) do
 
   create_table "guides", force: :cascade do |t|
     t.string   "name",       default: "", null: false
-    t.string   "phone",      default: "", null: false
-    t.string   "email",      default: "", null: false
+    t.string   "phone",      default: ""
+    t.string   "email",      default: ""
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end
