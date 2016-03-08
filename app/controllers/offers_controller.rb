@@ -27,6 +27,6 @@ class OffersController < ApplicationController
 	def offer_params
 		
 		params.require(:offer).permit(:excursion_id,:guide_id,:language,:date,:available)
-		binding.pry
+		
 	end
 end

@@ -1,8 +1,8 @@
 
 <%= display_flash_message%>
 <h1>Excursions</h1>
-<%= link_to "New Excursion", new_excursion_path %>
-
+<%= link_to "New Excursion", new_excursion_path %><br>
+<%= link_to "Guides", guides_path %>
 <!-- para consultar las excursiones entre dos fecas -->
 <%= form_tag(excursions_date_path, method: "post") do %>
 
