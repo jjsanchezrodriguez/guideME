@@ -1,0 +1,18 @@
+<%= form_for @guide do |f|%>
+	<div class="name-container">
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	</div>
+
+	<div class="phone-container">
+		<%= f.label :phone %>
+		<%= f.text_field :phone %>
+	</div>
+
+	<div class="email-container">
+		<%= f.label :email %>
+		<%= f.text_field :email %>
+	</div>
+
+	<%= f.submit "Submit" %>
+<%end%>

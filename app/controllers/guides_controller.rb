@@ -11,11 +11,11 @@ class GuidesController < ApplicationController
 		@guide = Guide.new
 	end
 
-	def show
-		@guide = Guide.new excursion_params
+	def create
+		@guide = Guide.new guide_params
 		if @guide.save
 			flash[:notice] = "Guide created!"
-			redirect_to @guide #Es igual que redirect_to excursion_path(@project)
+			redirect_to @guide 
 		else
 			@errors = @guide.errors.full_messages
 			flash.now[:alert] = "There was a problem creating a Guide"
@@ -23,8 +23,32 @@ class GuidesController < ApplicationController
 		end
 	end
 
+	def edit
+		@guide = Guide.find params[:id]
+	end
+
+	def update
+		@guide = Guide.find params[:id]
+		if @guide.update_attributes guide_params
+			flash.now[:notice] = "Guide #{@guide.name} edited!"
+			redirect_to guides_path
+		else
+			@errors = @guide.errors.full_messages
+			flash.now[:alert] = "There was a problem editing guide #{@guide.name}"
+			render 'edit'
+		end
+	end
+
+	def destroy
+		@guide = Guide.find params[:id]
+		@guide.destroy
+
+		flash[:notice] = "Guide #{@guide.name} destroyed!"
+		redirect_to guides_path
+	end
+
 	private
 	def guide_params
-		params.require(:guide).permit(:name,:duration,:price,:start,:description, :monuments)
+		params.require(:guide).permit(:name,:phone,:email)
 	end
 end

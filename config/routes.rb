@@ -17,7 +17,9 @@ Rails.application.routes.draw do
   end
 
   post '/excursions/date' =>'excursions#index'
-
+  get  '/offers/new/:guide_id' =>'offers#new'
+  post '/offers' =>'offers#create'
+:guide_id
   # resources :tourist  do
   #   resources :excursions
   #   resources :guides

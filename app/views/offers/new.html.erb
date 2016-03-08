@@ -1,0 +1,48 @@
+El nombre del guia es <%=@guide.name%>
+
+
+Las excursiones disonibles son
+<ul>
+  <% @excursions.each do |excursion| %>
+    <li>
+       <%= excursion.name %>
+    </li>
+  <% end %>
+</ul>
+
+<%= form_tag(offers_path, method: "post") do %>
+
+    <div class="name-container">
+	    <%= label_tag("Guide") %>
+	    <%= text_field_tag(:guide_id) %>
+	</div>
+	    
+    <div class="name-container">
+	    <%= label_tag("Excursions") %>
+	    <%= text_field_tag(:excursion_id) %> 
+	</div>
+
+    <div class="name-container">
+    	<%= label_tag("Languaje") %>
+    	<%= text_field_tag(:language) %>
+    
+    </div>
+    	
+    <div class="name-container">
+    	<%= label_tag("Date") %>
+    	<%= text_field_tag(:date) %>    
+    </div>
+
+    <div class="name-container">
+    	<%= label_tag("Availables Places") %>
+    	<%= text_field_tag(:available) %>
+
+    </div>
+    	
+    <%= submit_tag("Create Offer!!!") %>
+<% end %>
+
+
+
+
+

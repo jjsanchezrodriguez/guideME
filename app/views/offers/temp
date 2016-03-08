@@ -1,0 +1,30 @@
+<%= form_for [@excursions, @guide, @offer] do |f|%>
+	<div class="excursion-container">
+		<%= f.label :excursion %>
+		<%= f.text_field :excursion_id %>
+	</div>
+
+	<div class="guide-container">
+		<%= f.label :guide %>
+		<%= f.text_field :guide %>
+	</div>
+
+	<div class="language-container">
+		<%= f.label :language %>
+		<%= f.text_field :language %>
+	</div>
+
+	<div class="date-container">
+		<%= f.label :date %>
+		<%= f.text_field :date %>
+		<%= f.date_field :date %>
+	</div>
+
+	<div class="available-container">
+		<%= f.label :available %>
+		<%= f.text_field :available %>
+	</div>
+
+	<%= f.submit "Submit" %>
+<%end%>
+<%redirect_to guide_excursion_offers_path%>
