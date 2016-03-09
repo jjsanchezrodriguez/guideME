@@ -1,23 +1,25 @@
 <h1>Excursion</h1>
 <ul>
-    <li>     <%= @excursion.id %>   </li>
-    <li>     <%= @excursion.name %>   </li>
-    <li>     <%= @excursion.duration %>   </li>
-    <li>     <%= @excursion.price %>   </li>
-    <li>     <%= @excursion.start %>   </li>
-    <li>     <%= @excursion.description %>   </li>
+    <li> Id: <%= @excursion.id %> </li>
+    <li> Name: <%= @excursion.name %> </li>
+    <li> Duration: <%= @excursion.duration %> </li>
+    <li> Price: <%= @excursion.price %> </li>
+    <li> Start: <%= @excursion.start %> </li>
+    <li> Description: <%= @excursion.description %> </li>
 </ul>
+
+<% if @excursion.offers.present? %>
+    <h1>Offers</h1>
+    <ul>
+      <% @excursion.offers.each do |offer| %>
+    
+        <h3> Guide: <%= offer.guide.name  %>  <%= offer.guide_id  %> </h3>  
+        <li> Language: <%= offer.language %> </li>
+        <li> Date: <%= offer.date %> </li>
+        <li> Available: <%= offer.available %> </li>
+        <%= link_to "Book a tour", excursions_path %>  
+      <% end %>
+    </ul>
+<% end %>
 
 <%= link_to "Back to Excursions", excursions_path %>  
-
-<h1>Offers</h1>
-<ul>
-  <% @offers.each do |offer| %>
-    <li>     <%=  offer.excursion_id %>   </li>
-    <li>     <%=  offer.guide_id %>   </li>
-    <li>     <%=  offer.language %>   </li>
-    <li>     <%=  offer.date %>   </li>
-    <li>     <%=  offer.available %>   </li>
-  <% end %>
-</ul>
-

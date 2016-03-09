@@ -32,11 +32,11 @@ ActiveRecord::Schema.define(version: 20160301160347) do
   add_index "excursions_monuments", ["monument_id"], name: "index_excursions_monuments_on_monument_id"
 
   create_table "guides", force: :cascade do |t|
-    t.string   "name",       default: "", null: false
-    t.string   "phone",      default: ""
-    t.string   "email",      default: ""
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.string   "name",       null: false
+    t.string   "phone",      null: false
+    t.string   "email",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "monuments", force: :cascade do |t|

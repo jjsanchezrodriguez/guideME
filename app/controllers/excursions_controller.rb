@@ -17,7 +17,6 @@ class ExcursionsController < ApplicationController
 
 	def show
 		@excursion = Excursion.find(params[:id])
-		@offers = Offer.where ["excursion_id=?", @excursion.id]
 		#binding.pry
 	end
 

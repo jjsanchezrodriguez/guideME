@@ -6,12 +6,13 @@
 
 	<div class="duration-container">
 		<%= f.label :duration %>
-		<%= f.text_field :duration %>
+		<%= f.select :duration, 1..10 %> <span>hours</span>
+
 	</div>
 
 	<div class="price-container">
 		<%= f.label :price %>
-		<%= f.text_field :price %>
+		<%= f.number_field :price %>
 	</div>
 
 	<div class="start-container">
@@ -21,8 +22,11 @@
 
 	<div class="description-container">
 		<%= f.label :description %>
-		<%= f.text_field :description %>
+		<%= f.text_area :description %>
 	</div>
 
 	<%= f.submit "Submit" %>
 <%end%>
+
+
+<%= link_to "Atrás", root_path %>

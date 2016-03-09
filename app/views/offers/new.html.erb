@@ -1,48 +1,31 @@
-El nombre del guia es <%=@guide.name%>
 
+<div> <%= @guide.name %> </div>
 
-Las excursiones disonibles son
-<ul>
-  <% @excursions.each do |excursion| %>
-    <li>
-       <%= excursion.name %>
-    </li>
-  <% end %>
-</ul>
-
-<%= form_tag(offers_path, method: "post") do %>
-
+<%= form_for([@guide, @offer], method: "post") do |f|%>
+        
     <div class="name-container">
-	    <%= label_tag("Guide") %>
-	    <%= text_field_tag(:guide_id) %>
-	</div>
-	    
-    <div class="name-container">
-	    <%= label_tag("Excursions") %>
-	    <%= text_field_tag(:excursion_id) %> 
-	</div>
+        <%= f.label("Excursions") %>
+        <%= f.select(:excursion_id, @excusions) %> 
+    </div>
 
-    <div class="name-container">
-    	<%= label_tag("Languaje") %>
-    	<%= text_field_tag(:language) %>
+    <div class="language-container">
+        <%= f.label("Languaje") %>
+        <%= f.text_field(:language) %>
     
     </div>
-    	
-    <div class="name-container">
-    	<%= label_tag("Date") %>
-    	<%= text_field_tag(:date) %>    
+        
+    <div class="date-container">
+        <%= f.label("Date") %>
+        <%= f.date_field(:date) %>    
     </div>
 
-    <div class="name-container">
-    	<%= label_tag("Availables Places") %>
-    	<%= text_field_tag(:available) %>
+    <div class="available-container">
+        <%= f.label("Availables Places") %>
+        <%= f.select(:available, 1..20) %>
 
     </div>
-    	
+        
     <%= submit_tag("Create Offer!!!") %>
 <% end %>
 
-
-
-
-
+<%= link_to "Back", @guide%> 

@@ -41,7 +41,7 @@ puts "Loaded Excursions!!!!"
 10.times do
     Offer.create(
         excursion_id: Faker::Number.between(1, 5),
-        guide_id: Faker::Number.between(1, 10),
+        guide_id: Faker::Number.between(1, 5),
         language: Faker::Address.country_code,
         date: Faker::Date.forward(15),
         available: Faker::Number.between(1, 25)
