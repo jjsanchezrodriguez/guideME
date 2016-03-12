@@ -1,8 +1,13 @@
+<div> <%= @tourist.name %> </div>
+<div> <%= @guides.name %> </div>
 
-<div> <%= @guide.name %> </div>
+<%= form_for([@tourist, @tour], method: "post") do |f|%>
+   <%= binding.pry%>     
+    <div class="name-container">
+        <%= f.label("Guides") %>
+        <%= f.select(:id, @excursions) %> 
+    </div>    
 
-<%= form_for([@guide, @offer], method: "post") do |f|%>
-        
     <div class="name-container">
         <%= f.label("Excursions") %>
         <%= f.select(:excursion_id, @excursions) %> 
@@ -29,3 +34,4 @@
 <% end %>
 
 <%= link_to "Back", @guide%> 
+

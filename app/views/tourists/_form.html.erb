@@ -1,0 +1,13 @@
+<%= form_for @tourist do |f|%>
+	<div class="name-container">
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	</div>
+
+	<div class="email-container">
+		<%= f.label :email %>
+		<%= f.text_field :email %>
+	</div>
+
+	<%= f.submit "Submit" %>
+<%end%>
