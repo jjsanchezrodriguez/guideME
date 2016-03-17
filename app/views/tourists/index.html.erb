@@ -7,7 +7,7 @@
        <%= link_to "New Tourist", new_tourist_path %>
        <%= link_to("Edit Tourist", edit_tourist_path(tourist)) %>
        <%= link_to("Delete Tourist", tourist_path(tourist), method: :delete, data:{confirm: "Are you sure?"}) %>
-       <%= link_to("Create a tour",new_tourist_tour_path(tourist)) %>
+       <%= link_to("Book a tour",new_tourist_tour_path(tourist)) %>
     </li>
   <% end %>
 </ul>

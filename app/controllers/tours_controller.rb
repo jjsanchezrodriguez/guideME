@@ -1,10 +1,11 @@
 class ToursController < ApplicationController
   def new
-    @all_offers =  Offer.all.map{|offer| [offer.excursion_id]}
-    @excursions = Excursion.all.map{|excursion| [excursion.name, excursion.id]}
-    @guides = Guide.all.map{|guide| [guide.name, guide.id]}
+    @all_offers =  Offer.all.map{|offer| [offer.excursion_id, offer.guide_id]}
+    @offers_excursions =  Offer.all.map{|offer| [offer.excursion.name, offer.excursion_id]}.uniq
+    @offers_guides =  Offer.all.map{|offer| [offer.excursion.name, offer.excursion_id]}.uniq
+  
+ 
     @tourist = Tourist.find params[:tourist_id]
-    binding.pry
     @tour = Tour.new
   end
 

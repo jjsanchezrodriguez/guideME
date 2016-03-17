@@ -1,8 +1,6 @@
 class TouristsController < ApplicationController
 	def index
 		@tourists = Tourist.all
-		@guides = Guides.all
-		@excursions = Excursions.all
 	end
 
 	def show
