@@ -1,0 +1,56 @@
+// Place all the styles related to the excursions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body{
+	background: #2C3F61; 
+}
+
+div.main_container{
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+header{
+	height: 125px;
+	background: #4b7ecc;
+}	
+
+.logo_img{
+	height: 100px;
+	width: 100px;
+	float: right;
+	margin: 20px 80px 0px 30px;
+}
+
+.logo_text{
+	margin: 75px 20px 0 0;
+	font-size: 2em;
+	float: right;
+	font-variant: small-caps;
+	font-weight: bold;
+	color: #d3cdcd;
+}
+
+img{
+	height: 100%;
+	width: 100%;
+}
+
+div.fondo{
+	background: #2C3F61; 
+	/*background-image: url("fondos/fondo1.jpg")
+	background-size: cover;
+	background-repeat: no-repeat; 
+	height: 500px;
+	background-position: center;;*/
+	margin: 0px;
+	padding: 0px;
+	
+}
+
+hr{
+	border: 1px inset  #d3cdcd;
+}
+
+

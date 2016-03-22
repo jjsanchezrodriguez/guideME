@@ -36,6 +36,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem "pry-rails"
 gem "rails-erd"  #para comprobar el modelo
 gem "faker"		 #para los seeds
+gem "devise"
 #gem "papeclic"
 
 
@@ -44,6 +45,7 @@ gem "faker"		 #para los seeds
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'quiet_assets'
 end
 
 group :development do

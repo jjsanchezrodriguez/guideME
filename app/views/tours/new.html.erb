@@ -4,7 +4,7 @@
     
     <div class="name-container">
         <%= f.label("Excursions") %>
-        <%= f.select(:excursion_id, @offers_excursions) %> 
+        <%= f.collection_select(:excursion_id, Offer.all, :excursion_name, :id) %>
     </div>     
     <%= submit_tag("Create Tour!!!") %>
 <% end %>

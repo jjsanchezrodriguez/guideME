@@ -1,17 +1,44 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>GuideME</title>
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<head>
+	  <title>GuideME</title>
 
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-<%= yield %>
+	  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	  <%= csrf_meta_tags %>
+	</head>
 
-</body>
+	<body>
+		<header class="row">
+			<div class = "logo_img">
+				<%=image_tag("logo.png")%>
+			</div>	
+
+			<div class = "logo_text">
+				GuideME
+			</div>
+		</header> <!-- fin header -->	
+
+		<nav class="row">
+			<ul>
+				<li><%= link_to "Excursion", new_excursion_path %></li>
+				<li><%= link_to "Guides", guides_path %></li>
+				<li><%= link_to "Tourists", tourists_path %></li>
+				<!-- if user_signed_in? -->
+					<li> <%= link_to "Logout", destroy_user_session_path, :method => :delete %> </li>
+				<!-- else -->
+				  	<li> <%= link_to "Login", new_user_session_path %>  </li>
+				<!-- end -->
+			</ul>  
+		</nav><!-- fin menu -->	
+
+		<div class = "fondo" class="row">
+			<%= yield %>
+		</div>
+
+	</body>
+
 </html>

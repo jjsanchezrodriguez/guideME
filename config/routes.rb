@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  devise_for :users, controllers: { registrations: 'registrations' }
+
   root to: "excursions#index"
 
   resources :offers
@@ -22,7 +24,7 @@ Rails.application.routes.draw do
   #   end    
   # end
 
-  post '/excursions/date' => 'excursions#index'
+  post '/excursions/date' => 'excursions#show_query'
   get  '/offers/new/:guide_id' => 'offers#new'
   post '/offers' => 'offers#create'
 

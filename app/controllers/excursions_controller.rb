@@ -1,7 +1,9 @@
 class ExcursionsController < ApplicationController
-	def index
-		if !params[:init_date]
-			@excursions = Excursion.all
+	def show_query
+
+		if params[:init_date].blank? || params[:final_date].blank?
+			render 'index'
+			
 		else	
 			from = Date.parse(params[:init_date])
 			to   = Date.parse(params[:final_date])

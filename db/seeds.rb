@@ -1,6 +1,6 @@
-5.times do
+10.times do
     Guide.create(
-        name: Faker::Name.name,
+        name:  Faker::Name.name,
         phone: Faker::PhoneNumber.phone_number,
         email: Faker::Internet.email
     	)
@@ -9,7 +9,7 @@ puts "Loaded Guides!!!!"
 
 10.times do
 	Tourist.create(
-        name: Faker::Name.name,
+        name:  Faker::Name.name,
         email: Faker::Internet.email
     	)
 end
@@ -26,7 +26,7 @@ puts "Loaded Turist!!!!"
 end
 puts "Loaded Monuments!!!!"
 
-5.times do
+10.times do
 	Excursion.create(
         name: Faker::Name.name,
         duration: Faker::Number.between(1, 4),
@@ -52,8 +52,8 @@ puts "Loaded Offers!!!!"
 10.times do
     Tour.create(
         excursion_id: Faker::Number.between(1, 5),
-        guide_id: Faker::Number.between(1, 10),
-        tourist_id: Faker::Number.between(1, 10),
+        guide_id: Faker::Number.between(1, 5),
+        tourist_id: Faker::Number.between(1, 5),
         guide_point: Faker::Number.between(1, 5),
         excursion_point: Faker::Number.between(1, 5),
         guide_description: Faker::Lorem.paragraph,

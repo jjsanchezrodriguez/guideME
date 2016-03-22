@@ -1,32 +1,33 @@
-<%= form_for @excursion do |f|%>
-	<div class="name-container">
-		<%= f.label :name %>
-		<%= f.text_field :name %>
-	</div>
+<div class = "main_container">
+	<%= form_for @excursion do |f|%>
+		<div class="name-container">
+			<%= f.label :name %>
+			<%= f.text_field :name %>
+		</div>
 
-	<div class="duration-container">
-		<%= f.label :duration %>
-		<%= f.select :duration, 1..10 %> <span>hours</span>
+		<div class="duration-container">
+			<%= f.label :duration %>
+			<%= f.select :duration, 1..10 %> <span>hours</span>
+		</div>
 
-	</div>
+		<div class="price-container">
+			<%= f.label :price %>
+			<%= f.number_field :price %>
+		</div>
 
-	<div class="price-container">
-		<%= f.label :price %>
-		<%= f.number_field :price %>
-	</div>
+		<div class="start-container">
+			<%= f.label :start %>
+			<%= f.date_field :start %>
+		</div>
 
-	<div class="start-container">
-		<%= f.label :start %>
-		<%= f.date_field :start %>
-	</div>
+		<div class="description-container">
+			<%= f.label :description %>
+			<%= f.text_area :description %>
+		</div>
 
-	<div class="description-container">
-		<%= f.label :description %>
-		<%= f.text_area :description %>
-	</div>
-
-	<%= f.submit "Submit" %>
-<%end%>
+		<%= f.submit "Submit" %>
+	<%end%>
 
 
-<%= link_to "Atrás", root_path %>
+	<%= link_to "Atrás", root_path %>
+</div>	

@@ -1,3 +1,44 @@
 // Place all the styles related to the excursions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//index
+.caja-busq {
+	background: rgba(211,205,205,0.3);
+	height: 400px;
+	margin: 30px 0px 0px 30px;
+	padding: 10px;
+	border-radius: 4px;
+}
+
+.tit-busq {
+	text-align: center;
+	font-variant: small-caps;
+}
+
+.enviar {
+	float :right;
+	margin: 10px 50px 0 0 ;
+}
+
+.cuadro-fecha {
+	border-radius: 5px;
+	padding-left: 40px;
+}
+//------------------------------------------------------------------------
+//show_query
+.excursion{
+	border:1px solid red;
+} 
+.enlace-excursion{
+	color: red;
+	font-size: 1.3em;
+	margin: 10px;
+} 
+.enlace-excursion:hover{
+	color: yellow;
+} 
+
+
+

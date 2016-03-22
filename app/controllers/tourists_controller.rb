@@ -1,6 +1,6 @@
 class TouristsController < ApplicationController
 	def index
-		@tourists = Tourist.all
+		@tourists = User.where(rol: "tourist")
 	end
 
 	def show

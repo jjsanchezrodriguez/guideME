@@ -1,0 +1,20 @@
+<!-- Para mostrar las excursiones-->
+<ul>
+  <% @excursions.each do |excursion| %>
+    <div class = "excursion">
+	    <div class = "row">
+	    	<div class ="col-sm-4 ">
+		       <%= link_to excursion.name, excursion_path(excursion), class: "enlace-excursion" %>
+		       <div class = " logo_img">
+						<%=image_tag("logo.png")%>
+				</div>		
+			</div>	
+		</div>	
+
+		<div class = "row">
+	       <%= link_to("Edit", edit_excursion_path(excursion),  class: "btn btn-primary btn-sm") %>
+	       <%= link_to("Delete", excursion_path(excursion), class: "btn btn-primary btn-sm" ,method: :delete, data:{confirm: "Are you sure?"}) %>
+		</div>
+	</div>
+   
+  <% end %>
