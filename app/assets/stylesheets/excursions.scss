@@ -5,27 +5,30 @@
 
 //index
 .caja-busq {
-	background: rgba(211,205,205,0.3);
-	height: 400px;
-	margin: 30px 0px 0px 30px;
+	background: rgba(44,63,97,0.7);
+	margin: 0px 0px 20px 30px;
 	padding: 10px;
-	border-radius: 4px;
+	border-radius: 4px;	
+	max-width: 450px;
 }
 
 .tit-busq {
 	text-align: center;
 	font-variant: small-caps;
+	color: #c6ea8c;
 }
 
 .enviar {
 	float :right;
-	margin: 10px 50px 0 0 ;
+	margin: 10px 70px 0 0 ;
 }
 
 .cuadro-fecha {
 	border-radius: 5px;
 	padding-left: 40px;
+	color: #c6ea8c;
 }
+
 //------------------------------------------------------------------------
 //show_query
 .excursion{

@@ -1,22 +1,25 @@
-<%= display_flash_message%>
 
-<div class = "caja-busq col-sm-4">
-  <h3 class = "tit-busq">Busqueda de Excursiones</h3>
-  <hr>
+<div class = "notice">
+    <%= display_flash_message%>
+    </div>
+
+<div class = "caja-busq">
+  <h3 class = "tit-busq">Buscas una Excursión</h3>
 <!-- para consultar las excursiones entre dos fecas -->
   <%= form_tag excursions_date_path,  class: "form-group", method: "post"  do %>
     <div class = "row">  
+
       <span  class= "col-sm-6 cuadro-fecha">
         <%= label_tag("Fecha Inicio" ) %>
       </span>
 
-      <span  class= "col-sm-6">
+      <span  class= "col-sm-6 cuadro-fecha" >
       <%= label_tag("Fecha Fin") %>
       </span>
     </div> 
 
     <div class = "row">  
-      <span  class= "col-sm-6 cuadro-fecha">
+      <span  class= "col-sm-6">
         <%= date_field_tag(:init_date, class: "cuadro-fecha") %>
       </span>
 
@@ -28,6 +31,41 @@
     <div class = "row">    
       <%= submit_tag("Buscar !!!", class: "btn btn-default enviar") %>
     </div>
-  <% end %>
+  <% end %> 
 </div>
+
+
+
+<div class = "caja-busq">
+  <h3 class = "tit-busq">Buscas un Guía</h3>
+  <hr>
+<!-- para consultar las excursiones entre dos fecas -->
+  <%= form_tag excursions_date_path,  class: "form-group", method: "post"  do %>
+    <div class = "row">  
+
+      <span  class= "col-sm-6 cuadro-fecha">
+        <%= label_tag("Fecha Inicio" ) %>
+      </span>
+
+      <span  class= "col-sm-6 cuadro-fecha">
+      <%= label_tag("Fecha Fin") %>
+      </span>
+    </div> 
+
+    <div class = "row">  
+      <span  class= "col-sm-6">
+        <%= date_field_tag(:init_date, class: "cuadro-fecha") %>
+      </span>
+
+      <span  class= "col-sm-6">
+      <%= date_field_tag(:final_date) %> 
+      </span>
+    </div> 
+   
+    <div class = "row">    
+      <%= submit_tag("Buscar !!!", class: "btn btn-default enviar") %>
+    </div>
+  <% end %> 
+</div>
+
 

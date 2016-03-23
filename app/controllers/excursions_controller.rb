@@ -2,8 +2,8 @@ class ExcursionsController < ApplicationController
 	def show_query
 
 		if params[:init_date].blank? || params[:final_date].blank?
+			flash.now[:alert] = "Date Error"  
 			render 'index'
-			
 		else	
 			from = Date.parse(params[:init_date])
 			to   = Date.parse(params[:final_date])
