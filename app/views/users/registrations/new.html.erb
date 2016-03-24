@@ -1,47 +1,44 @@
 
 <div class = "user-session">
-<h2>Sign up</h2>
+  <h2 class = "tit-busq text-color">Registro Usuario </h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+      <%= f.label :Nombre, class: "text-color" %> <br />
+      <%= f.text_field :name,  autofocus: true, class: "name-container fondo-container" %>
 
-  <div class="field name-container">
-    <%= f.label :name %> <br />
-    <%= f.text_field :name %>
-  </div>
+    <div>
+      <%= f.label :Telefono, class: "text-color" %> <br />
+      <%= f.text_field :phone, class: "phone-container fondo-container" %>
+    </div>
 
-  <div class="field phone-container">
-    <%= f.label :phone %> <br />
-    <%= f.text_field :phone %>
-  </div>
+    <div>
+      <%= f.label :Role, class: "text-color" %> <br />
+      <%= f.text_field :role, class: "fondo-container" %>
+    </div>
 
-  <div class="field role-container">
-    <%= f.label :role %> <br />
-    <%= f.text_field :role %>
-  </div>
+    <div>
+      <%= f.label :Email, class: "text-color" %><br />
+      <%= f.email_field :email, class: "name-container fondo-container" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+     <div>
+      <%= f.label :Password, class: "text-color" %>
+      <% if @minimum_password_length %>
+      <em class= "text-color">(<%= @minimum_password_length %> caracteres minimo)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "off", class: "pass-container fondo-container" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+    <div>
+      <%= f.label :Password_confirmacion, class: "text-color"  %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "off", class: " pass-container fondo-container"  %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+    <div class="button-entrar">
+      <%= f.submit "Registrarse" %>
+    </div>
+  <% end %>
 
-  <div class="actions">
-    <%= f.submit "Registrarse" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+  <%= render "users/shared/links" %>
 </div>

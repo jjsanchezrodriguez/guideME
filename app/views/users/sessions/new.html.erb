@@ -3,26 +3,41 @@
     <h2 class = "tit-busq text-color">Acceso Usuarios </h2>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="text-color">
-        <%= f.label :email %><br />
-      </div>
-        <%= f.email_field :email, autofocus: true %>
-      
+      <div class = "row">
+        <div class = "col-sm-6">
+          <span class="field text-color">
+            <%= f.label :email %><br />
+          </span>
 
-      <div class="text-color">
-        <%= f.label :password %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
-      </div>
+          <span class="user-input">
+            <%= f.email_field :email, autofocus: true %>
+          </span>
 
-      <% if devise_mapping.rememberable? -%>
-       <div class="text-color">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
+        </div>  
+        
+        <div class = "col-sm-6">
+          <span class="field text-color">
+            <%= f.label :password %>
+          </span>  
+
+          <span class="user-input"> 
+            <%= f.password_field :password, autocomplete: "off" %>
+          </span>
+
         </div>
-      <% end -%>
+      </div>
 
-      <div class="actions">
-        <%= f.submit "Entrar" %>
+      <div class = "row">   
+        <% if devise_mapping.rememberable? %>
+         <div class="text-color check-align">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end %>
+
+        <div class="button-entrar">
+          <%= f.submit "Entrar" %>
+        </div>
       </div>
     <% end %>
 
