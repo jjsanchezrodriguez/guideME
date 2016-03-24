@@ -1,6 +1,9 @@
+<div class = "user-session">
+
 <h1>Guides</h1>
 
 <ul>
+	<%binding.pry%>
   <% @guides.each do |guide| %>
     <li>
       <%= link_to guide.name, guide_path(guide) %>
@@ -13,3 +16,4 @@
 </ul>
 
 <%= link_to "Back", root_path %>
+</div>

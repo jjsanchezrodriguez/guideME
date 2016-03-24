@@ -4,11 +4,11 @@ class TouristsController < ApplicationController
 	end
 
 	def show
-		@tourist  = Tourist.find(params[:id])
+		@tourist  = User.find(params[:id])
 	end
 
 	def new
-		@tourist = Tourist.new
+		@tourist = User.new
 	end
 
 	def create

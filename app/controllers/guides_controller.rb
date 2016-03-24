@@ -8,12 +8,11 @@ class GuidesController < ApplicationController
 	end
 
 	def new
-		@guide = Guide.new
-		
+		@guide = User.new
 	end
 
 	def create
-		@guide = Guide.new guide_params
+		@guide = User.new guide_params
 		if @guide.save
 			flash[:notice] = "Guide created!"
 			redirect_to @guide 
@@ -50,6 +49,6 @@ class GuidesController < ApplicationController
 
 	private
 	def guide_params
-		params.require(:guide).permit(:name,:phone,:email)
+		params.require(:user).permit(:name,:phone,:email,:rol)
 	end
 end

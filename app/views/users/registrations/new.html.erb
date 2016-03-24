@@ -14,7 +14,8 @@
 
     <div>
       <%= f.label :Role, class: "text-color" %> <br />
-      <%= f.text_field :role, class: "fondo-container" %>
+     
+        <%= f.select(:role, ["guide", "tourist"], class: "fondo-container") %> 
     </div>
 
     <div>
@@ -40,5 +41,5 @@
     </div>
   <% end %>
 
-  <%= render "users/shared/links" %>
+  
 </div>

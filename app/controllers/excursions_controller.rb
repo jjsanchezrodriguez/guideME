@@ -1,4 +1,8 @@
 class ExcursionsController < ApplicationController
+	def index
+		@guides = Guide.all
+	end
+
 	def show_query
 
 		if params[:init_date].blank? || params[:final_date].blank?
