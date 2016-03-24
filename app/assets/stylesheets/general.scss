@@ -6,15 +6,13 @@ body{
 	background: #2C3F61; 
 }
 
-div.main_container{
-	background-repeat: no-repeat;
-	background-position: center;
+.sup{
+	height: 15px;
 }
 
 header{
 	height: 100px;
 	background:  #d3cdcd;
-	margin-top: 10px;
 }	
 
 .logo_img{
@@ -40,10 +38,10 @@ img{
 
 div.fondo{
 	background: #2C3F61; 
-	background-image: url("fondos/fondomadrid.jpg");
+	background-image: url("fondomadrid2.jpg");
 	background-size: cover;
 	padding-top: 30px;
-	height: 800px;
+	height: 700px;
 	background-position: center;
 	
 }
@@ -56,4 +54,8 @@ hr{
 .notice {
 	color:yellow;
 }
+.text-color{
+	color: #d3cdcd;
+}
+
 

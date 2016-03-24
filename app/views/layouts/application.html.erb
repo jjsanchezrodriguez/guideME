@@ -12,8 +12,7 @@
 	</head>
 
 	<body>
-		
-
+		<div class="sup"> </div>
 		<header class="row">
 			<div class = "logo_img">
 				<%=image_tag("logo.png")%>
@@ -24,25 +23,34 @@
 			</div>
 		</header> <!-- fin header -->	
 
-		<nav class="row">
-			<ul>
-				<li><%= link_to "Excursion", new_excursion_path %></li>
-				<li><%= link_to "Guides", guides_path %></li>
-				<li><%= link_to "Tourists", tourists_path %></li>
-				<!-- if user_signed_in? -->
-					<li> <%= link_to "Logout", destroy_user_session_path, :method => :delete %> </li>
-				<!-- else -->
-				  	<li> <%= link_to "Login", new_user_session_path %>  </li>
-				<!-- end -->
-			</ul>  
-		</nav><!-- fin menu -->	
+		<div class = "row">
+			<nav class="col-sm-6">
+				<ul>
+					<li><%= link_to "Excursion", excursions_path %></li>
+					<li><%= link_to "Guides", guides_path %></li>
+					<li><%= link_to "Tourists", tourists_path %></li>
+				</ul>  
+			</nav><!-- fin menu -->	
+
+			<div class="col-sm-6 menu-user">
+				<ul>
+				<%if user_signed_in? %>
+				<%= link_to current_user.name %>
+					<li><%= link_to "Salir", destroy_user_session_path, method: :delete %></li>
+					
+				<% else %>
+				  	<li><%= link_to "Entrar", new_user_session_path %>  </li>
+				<% end %>
+			</div	><!-- menu user -->		
+					
 
 		<div class = "fondo" class="row">
 			<%= yield %>
 		</div>
 
-	
 
+	
+		   
 	</body>
 
 </html>

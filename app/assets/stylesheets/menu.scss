@@ -1,22 +1,25 @@
-nav { 
+.menu-user, nav { 
    background: #2C3F61; 
    margin: 0px;
    padding: 0px;
    border-bottom: 1px inset  #d3cdcd;
 }
+.menu-user{
+	text-align: right;
+	padding-right: 20px;
+}
    
-nav ul {	
+.menu-user ul, nav ul {	
 	list-style-type: none;
-	padding-top: 5px; 
 }
 	
-nav ul li{
+.menu-user ul li, nav ul li{
 	display: inline-block;
 	width: 100px;
-	padding-top: 5px;
+	margin-top: 10px;
 }
-   
- nav ul li a{
+
+.menu-user ul li a, nav ul li a{
 	display: block;
 	text-decoration: none;
 	font-size: 1.2em;
@@ -25,10 +28,35 @@ nav ul li{
 	color: #d3cdcd;
 	border-radius: 3px;
 	text-align: center;
+	border: 1px solid #2C3F61; 
 } 
 
-nav ul li a:hover{
+.menu-user ul li a:hover, nav ul li a:hover{
 	background: #d3cdcd;
 	color: rgba(43,61,96,0.9); 
 	text-decoration: none;
 }
+
+.menu-user ul li {
+	margin-right: 20px;
+} 
+
+.menu-user ul li a{
+	width: 110px;
+	border: 1px solid #d3cdcd;
+	text-decoration: none;
+	background: #d3cdcd;
+	color: #2C3F61; 
+} 
+
+.menu-user ul li a:hover{
+	background: #2C3F61; 
+	color: #d3cdcd;
+	text-decoration: none;
+}
+
+.menu-user ul a{
+	color:#d3cdcd;
+	font-weight: none;
+	margin-right: 20px;
+}	

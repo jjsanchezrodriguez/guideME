@@ -4,12 +4,17 @@
 
 
 //index
-.caja-busq {
+.user-session, .caja-busq {
 	background: rgba(44,63,97,0.7);
 	margin: 0px 0px 20px 30px;
 	padding: 10px;
 	border-radius: 4px;	
 	max-width: 450px;
+}
+
+.user-session{
+	margin: 90px auto;
+
 }
 
 .tit-busq {
