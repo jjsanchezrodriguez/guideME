@@ -6,11 +6,10 @@
 	    	<div class ="col-sm-4 ">
 		       <%= link_to excursion.name, excursion_path(excursion), class: "enlace-excursion" %>
 		       <% excursion.monuments.each do |monument| %>
-		       
-		       <div class = "logo_img">
-					<%=image_tag(monument.image)%>
-					<%=monument.name%>
-				</div>	
+			       	<div class = "logo_img">
+						<%=image_tag(monument.image)%>
+						<%=monument.name%>
+					</div>	
 				<% end %>	
 			</div>	
 		</div>	

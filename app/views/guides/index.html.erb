@@ -1,19 +1,30 @@
 <div class = "user-session">
 
-<h1>Guides</h1>
+  <h1 class = "tit-busq text-color">Guias</h1>
 
-<ul>
-	<%binding.pry%>
-  <% @guides.each do |guide| %>
-    <li>
-      <%= link_to guide.name, guide_path(guide) %>
-       <%= link_to "New Guide", new_guide_path %>
-       <%= link_to("Edit Guide", edit_guide_path(guide)) %>
-       <%= link_to("Delete Guide", guide_path(guide), method: :delete, data:{confirm: "Are you sure?"}) %>
-       <%= link_to "Create Offer", "/offers/new/" + guide.id.to_s %>
-    </li>
-  <% end %>
-</ul>
+  <ul>
+    <% @guides.each do |guide| %>
+      <li>
 
-<%= link_to "Back", root_path %>
+        <%= link_to guide.name, guide_path(guide),class: "text-color" %>
+        <%=binding.pry%>
+        <%if user_signed_in? && current_user.role=="guide" %>
+          <div class ="row">
+             <%= link_to "Nuevo", new_guide_path, class: "text-color" %>
+             <%= link_to "Editar", edit_guide_path(guide), class: "text-color" %>
+             <%= link_to "Borrar", guide_path(guide), method: :delete, data:{confirm: "¿Estas Seguro?"}, class: "text-color" %>
+             <%= link_to "Crear una Excursión", "/offers/new/" + guide.id.to_s, class: "text-color" %> 
+            </div> 
+        <% end %>  
+      </li>
+    <% end %>
+  </ul>
+
+  <%= link_to "Volver", root_path,class: "text-color" %>
 </div>
+
+
+
+
+
+  

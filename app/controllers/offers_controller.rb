@@ -5,7 +5,7 @@ class OffersController < ApplicationController
 
   def new
     @excursions = Excursion.all.map{|excursion| [excursion.name, excursion.id]}
-    @guide = Guide.find params[:guide_id]
+    @guide = User.find params[:guide_id]
     @offer = Offer.new
   end
 

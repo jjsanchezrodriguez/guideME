@@ -1,6 +1,7 @@
 class GuidesController < ApplicationController
 	def index
 		@guides = User.where(role: "guide")
+		
 	end
 
 	def show

@@ -23,7 +23,6 @@ class ExcursionsController < ApplicationController
 
 	def show
 		@excursion = Excursion.find(params[:id])
-		#binding.pry
 	end
 
 	def new
