@@ -1,4 +1,3 @@
-
 <div class = "notice">
     <%= display_flash_message%>
 </div>
@@ -37,12 +36,10 @@
 <div class = "caja-busq">
   <h3 class = "tit-busq">Buscas un Guía</h3>
  <!--MIRAR A VER QUE PASA-->
-   <%=select("post", "id", @guides)%> 
+   <!--select("post", "id", @guides)--> 
   
     <div class = "row">    
       <%= submit_tag("Buscar !!!", class: "btn btn-default enviar") %>
     </div>
  
 </div>
-
-

@@ -4,7 +4,7 @@
 
 
 //index
-.user-session, .caja-busq {
+.user-session, .caja-busq,.caja-exc {
 	background: rgba(44,63,97,0.7);
 	margin: 40px 0px 20px 30px;
 	padding: 2px 0px 20px 25px;
@@ -30,9 +30,7 @@
 
 //------------------------------------------------------------------------
 //show_query
-.excursion{
-	border:1px solid red;
-} 
+
 .enlace-excursion{
 	color: red;
 	font-size: 1.3em;
@@ -41,6 +39,12 @@
 .enlace-excursion:hover{
 	color: yellow;
 } 
+
+.caja-exc{
+	background: rgba(244,163,97,0.7);
+	max-width: 1000px;
+	margin: 50px;
+}
 
 
 

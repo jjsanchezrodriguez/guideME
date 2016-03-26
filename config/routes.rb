@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :guides do
     resources :offers, only: [:new, :create, :edit, :update]
   end
-
+  get  '/excursions/all' =>  'excursions#all'
   resources :excursions 
 
 
@@ -23,9 +23,11 @@ Rails.application.routes.draw do
   #     end  
   #   end    
   # end
-
+  
   post '/excursions/date' => 'excursions#show_query'
-  get  '/offers/new/:guide_id' => 'offers#new'
+  
+  get  '/offers/new/:user_id' => 'offers#new'
   post '/offers' => 'offers#create'
+
 
 end

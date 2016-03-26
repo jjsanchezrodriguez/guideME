@@ -1,10 +1,10 @@
 class ExcursionsController < ApplicationController
-	def index
-		@guides = Guide.all
+	def all
+		@excursions = Excursion.all
+		render "show_query"
 	end
 
 	def show_query
-
 		if params[:init_date].blank? || params[:final_date].blank?
 			flash.now[:alert] = "Date Error"  
 			render 'index'
@@ -19,6 +19,7 @@ class ExcursionsController < ApplicationController
 				@excursions = Excursion.where(start: from..to)	
 			end	
 		end
+
 	end
 
 	def show

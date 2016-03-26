@@ -1,3 +1,4 @@
+<div class = "caja-exc">
 <h1>Excursion</h1>
 <ul>
     <li> Id: <%= @excursion.id %> </li>
@@ -13,7 +14,7 @@
     <ul>
       <% @excursion.offers.each do |offer| %>
     
-        <h3> Guide: <%= offer.guide.name  %>  <%= offer.guide_id  %> </h3>  
+        <h3> Guide: <%= offer.user.name  %>  <%= offer.user_id  %> </h3>  
         <li> Language: <%= offer.language %> </li>
         <li> Date: <%= offer.date %> </li>
         <li> Available: <%= offer.available %> </li>
@@ -23,3 +24,4 @@
 <% end %>
 
 <%= link_to "Back to Excursions", excursions_path %>  
+</div>

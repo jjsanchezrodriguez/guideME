@@ -1,14 +1,14 @@
 <!-- Para mostrar las excursiones-->
-<ul>
+
   <% @excursions.each do |excursion| %>
-    <div class = "excursion">
+    <div class = "caja-exc">
 	    <div class = "row">
 	    	<div class ="col-sm-4 ">
 		       <%= link_to excursion.name, excursion_path(excursion), class: "enlace-excursion" %>
 		       <% excursion.monuments.each do |monument| %>
 			       	<div class = "logo_img">
-						<%=image_tag(monument.image)%>
-						<%=monument.name%>
+						Imagen Monumento<%=image_tag(monument.image)%>
+						Nombre Monumento<%=monument.name%>
 					</div>	
 				<% end %>	
 			</div>	
@@ -16,8 +16,7 @@
 
 		<div class = "row">
 	       <%= link_to("Edit", edit_excursion_path(excursion),  class: "btn btn-primary btn-sm") %>
-	       <%= link_to("Delete", excursion_path(excursion), class: "btn btn-primary btn-sm" ,method: :delete, data:{confirm: "Are you sure?"}) %>
+	       <%= link_to("Delete", excursion_path(excursion), class: "btn btn-primary btn-sm" ,method: :delete, data:{confirm: "Confirma que desea eliminar la excursion"}) %>
 		</div>
 	</div>
-   
   <% end %>

@@ -1,25 +1,27 @@
-<h1>Guide Data</h1>
+<div class = "user-session text-color">
+  <h1>Guide Data</h1>
 
-<p> Name: <%= @guide.name %></p>
-<p> Phone: <%= @guide.phone %></p>
-<p> Email: <%= @guide.email %></p>
+  <p> Name: <%= @guide.name %></p>
+  <p> Phone: <%= @guide.phone %></p>
+  <p> Email: <%= @guide.email %></p>
 
-<% if @guide.offers.present? %>
-    <h1>Offers</h1>
-    <ul>
-      <% @guide.offers.each do |offer| %>
-        <h3> Excursion: <%= offer.excursion.name %> </h3>
-        <li> Language: <%= offer.language %> </li>
-        <li> Date: <%= offer.date %> </li>
-        <li> Available: <%= offer.available %> </li>
-      <% end %>
-    </ul>
-<% end %>
+  <% if !@guide.offers.blank? %>
+      <h1>Offers</h1>
+      <ul>
+        <% @guide.offers.each do |offer| %>
+          <h3> Excursion: <%= offer.excursion.name %> </h3>
+          <li> Language: <%= offer.language %> </li>
+          <li> Date: <%= offer.date %> </li>
+          <li> Available: <%= offer.available %> </li>
+        <% end %>
+      </ul>
+  <% end %>
 
-<div>
-  <%= link_to "Add Offer", new_guide_offer_path(@guide) %>
+  <div>
+    <%= link_to "Add Offer", new_guide_offer_path(@guide) %>
+  </div>
+
+  <div>
+    <%= link_to "Back to Guides", guides_path %> 
 </div>
-
-<div>
-  <%= link_to "Back to Guides", guides_path %> 
 </div>

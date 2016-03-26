@@ -24,11 +24,11 @@ header{
 
 .logo_text{
 	margin: 50px 20px 0 0;
-	font-size: 2em;
+	font-size: 1.8em;
 	float: right;
 	font-variant: small-caps;
 	font-weight: bold;
-	color: #2C3F61;
+	color: #2c3f61;
 }
 
 img{
@@ -37,13 +37,11 @@ img{
 }
 
 div.fondo{
-	background: #2C3F61; 
-	background-image: url("fondomadrid2.jpg");
-	background-size: cover;
+	background: #2C3F61 url("fondomadrid2.jpg"); 
+	
+	
 	padding-top: 30px;
 	height: 700px;
-	background-position: center;
-	
 }
 
 hr{
@@ -52,8 +50,16 @@ hr{
 }
 
 .notice {
-	color:yellow;
+	font-size: 1.2em;
+	background: rgba(205,249,57,0.8);
+	text-align:right;
+	padding-right:30px;
+	font-size: 1.1em;
+	font-variant: small-caps;
+	font-weight: bold;
+	color: #2c3f61;
 }
+
 .text-color{
 	color: #d3cdcd;
 }

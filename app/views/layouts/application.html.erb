@@ -26,9 +26,9 @@
 		<div class = "row">
 			<nav class="col-sm-6">
 				<ul>
-					<li><%= link_to "Excursiones", excursions_path %></li>
+					<li><%= link_to "Inicio", root_path %></li>
+					<li><%= link_to "Excursiones", excursions_all_path %></li>
 					<li><%= link_to "Guias", guides_path %></li>
-					<li><%= link_to "Turistas", tourists_path %></li>
 				</ul>  
 			</nav><!-- fin menu -->	
 
@@ -47,10 +47,10 @@
 		<div class = "fondo" class="row">
 			<%= yield %>
 		</div>
+		<footer>
+			Algo para el footer
 
-
-	
-		   
+		</footer>
 	</body>
 
 </html>

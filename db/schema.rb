@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20160319101327) do
 
   create_table "offers", force: :cascade do |t|
     t.integer  "excursion_id"
-    t.integer  "guide_id"
+    t.integer  "user_id"
     t.string   "language"
     t.date     "date"
     t.integer  "available"
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 20160319101327) do
   end
 
   add_index "offers", ["excursion_id"], name: "index_offers_on_excursion_id"
-  add_index "offers", ["guide_id"], name: "index_offers_on_guide_id"
+  add_index "offers", ["user_id"], name: "index_offers_on_user_id"
 
   create_table "tourists", force: :cascade do |t|
     t.string   "name"
@@ -94,6 +94,11 @@ ActiveRecord::Schema.define(version: 20160319101327) do
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
   end

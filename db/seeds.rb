@@ -3,15 +3,6 @@
         name:  Faker::Name.name,
         phone: Faker::PhoneNumber.phone_number,
         email: Faker::Internet.email
-        )
-end
-puts "Loaded Users!!!!"
-
-10.times do
-    Guide.create(
-        name:  Faker::Name.name,
-        phone: Faker::PhoneNumber.phone_number,
-        email: Faker::Internet.email
     	)
 end
 puts "Loaded Guides!!!!"
@@ -50,7 +41,7 @@ puts "Loaded Excursions!!!!"
 10.times do
     Offer.create(
         excursion_id: Faker::Number.between(1, 5),
-        guide_id: Faker::Number.between(1, 5),
+        user_id: Faker::Number.between(1, 5),
         language: Faker::Address.country_code,
         date: Faker::Date.forward(15),
         available: Faker::Number.between(1, 25)

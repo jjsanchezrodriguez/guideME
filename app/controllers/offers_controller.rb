@@ -6,11 +6,13 @@ class OffersController < ApplicationController
   def new
     @excursions = Excursion.all.map{|excursion| [excursion.name, excursion.id]}
     @guide = User.find params[:guide_id]
+    # binding.pry
     @offer = Offer.new
   end
 
   def create
-    @guide = Guide.find params[:guide_id]
+    binding.pry
+    @guide = User.find params[:guide_id]
     if @guide.offers.create(offer_params)
       flash[:notice] = "Offer created!"
       redirect_to @guide

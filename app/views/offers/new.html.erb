@@ -1,31 +1,32 @@
+<div class = "user-session text-color">
+    <div> <%= @guide.name %> </div>
 
-<div> <%= @guide.name %> </div>
+    <%= form_for([@user, @offer], method: "post") do |f|%>
+            
+        <div class="name-container">
+            <%= f.label("Excursions") %>
+            <%= f.select(:excursion_id, @excursions) %> 
+        </div>
 
-<%= form_for([@guide, @offer], method: "post") do |f|%>
+        <div class="language-container">
+            <%= f.label("Languaje") %>
+            <%= f.text_field(:language) %>
         
-    <div class="name-container">
-        <%= f.label("Excursions") %>
-        <%= f.select(:excursion_id, @excursions) %> 
-    </div>
+        </div>
+            
+        <div class="date-container">
+            <%= f.label("Date") %>
+            <%= f.date_field(:date) %>    
+        </div>
 
-    <div class="language-container">
-        <%= f.label("Languaje") %>
-        <%= f.text_field(:language) %>
-    
-    </div>
-        
-    <div class="date-container">
-        <%= f.label("Date") %>
-        <%= f.date_field(:date) %>    
-    </div>
+        <div class="available-container">
+            <%= f.label("Availables Places") %>
+            <%= f.select(:available, 1..20) %>
 
-    <div class="available-container">
-        <%= f.label("Availables Places") %>
-        <%= f.select(:available, 1..20) %>
+        </div>
+            
+        <%= submit_tag("Create Offer!!!") %>
+    <% end %>
 
-    </div>
-        
-    <%= submit_tag("Create Offer!!!") %>
-<% end %>
-
-<%= link_to "Back", @guide%> 
+    <%= link_to "Back", @user%> 
+</div>

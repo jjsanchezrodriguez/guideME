@@ -1,7 +1,6 @@
 class GuidesController < ApplicationController
 	def index
 		@guides = User.where(role: "guide")
-		
 	end
 
 	def show
@@ -50,6 +49,6 @@ class GuidesController < ApplicationController
 
 	private
 	def guide_params
-		params.require(:user).permit(:name,:phone,:email,:rol)
+		params.require(:user).permit(:name,:phone,:email,:role)
 	end
 end
