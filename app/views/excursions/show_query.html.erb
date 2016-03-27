@@ -1,22 +1,38 @@
 <!-- Para mostrar las excursiones-->
 
-  <% @excursions.each do |excursion| %>
-    <div class = "caja-exc">
-	    <div class = "row">
-	    	<div class ="col-sm-4 ">
-		       <%= link_to excursion.name, excursion_path(excursion), class: "enlace-excursion" %>
-		       <% excursion.monuments.each do |monument| %>
-			       	<div class = "logo_img">
-						Imagen Monumento<%=image_tag(monument.image)%>
-						Nombre Monumento<%=monument.name%>
-					</div>	
-				<% end %>	
-			</div>	
-		</div>	
+<% @excursions.each do |excursion| %>
+<div class = "caja-exc">
+    <div class = "row">
+    	<div class ="col-sm-3 datos-exc">
+	       	<%=link_to excursion.name, excursion_path(excursion), class: "enlace-excursion" %><br/>
+		    Name: <%= excursion.name %> <br/>
+		    Duration: <%= excursion.duration %> <br/>
+		    Price: <%= excursion.price %> <br/>
+		    Start: <%= excursion.start %> <br/> 
 
-		<div class = "row">
-	       <%= link_to("Edit", edit_excursion_path(excursion),  class: "btn btn-primary btn-sm") %>
-	       <%= link_to("Delete", excursion_path(excursion), class: "btn btn-primary btn-sm" ,method: :delete, data:{confirm: "Confirma que desea eliminar la excursion"}) %>
+		    <div class = "row">
+		       <%= link_to("Edit", edit_excursion_path(excursion),  class: "btn btn-primary btn-sm") %>
+		       <%= link_to("Delete", excursion_path(excursion), class: "btn btn-primary btn-sm" ,method: :delete, data:{confirm: "Confirma que desea eliminar la excursion"}) %>
+			</div>
 		</div>
-	</div>
-  <% end %>
+		<% cont = 0 %>
+	    <div class ="col-sm-9">   
+	       <% excursion.monuments.each do |monument| %>
+		       	<div class = "monument_img">
+					<%=image_tag(monument.image)%>
+					<%=monument.name%>
+				</div>	
+				<%cont = cont+1%>
+				<% if cont == 6%>
+					<%break%>
+				<% end %>	
+			<% end %>	
+		</div>	
+	</div>	
+
+	<div class = "row datos-exc descrip">
+		  Description: <%= excursion.description %> 
+	 </div>
+
+</div>
+<% end %>

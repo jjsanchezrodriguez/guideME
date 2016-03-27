@@ -41,9 +41,30 @@
 } 
 
 .caja-exc{
-	background: rgba(244,163,97,0.7);
-	max-width: 1000px;
-	margin: 50px;
+	background: rgba(44,63,97,0.5);
+	max-width: 1024px;
+	margin: 50px auto;
+}
+
+.datos-exc{
+	background: rgba(44,63,97,0.5);
+	max-width: 1024px;
+	border: 1px solid #d3cdcd;
+	border-radius: 5px;
+	color: #d3cdcd;
+}
+
+.row-monument{
+	height:50px;
+	border:1px solid red;
+}
+
+.monument_img{
+	float:left;
+	height: 100px;
+	width: 100px;
+	margin: 5px 10px;
+	border:1px solid red;
 }
 
 
