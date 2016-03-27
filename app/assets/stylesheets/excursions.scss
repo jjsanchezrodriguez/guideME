@@ -15,7 +15,6 @@
 .tit-busq {
 	text-align: center;
 	font-variant: small-caps;
-	color: #c6ea8c;
 	color: #d3cdcd;
 }
 
@@ -32,40 +31,92 @@
 //show_query
 
 .enlace-excursion{
-	color: red;
-	font-size: 1.3em;
-	margin: 10px;
+	font-size: 1.5em;
+	text-align: center;
+	background:  #d3cdcd;
+	margin:0 auto;
+	border-radius:3px;
 } 
-.enlace-excursion:hover{
-	color: yellow;
+
+
+.enlace-excursion a{
+	color: #2c3f61;
+	text-decoration: none;
 } 
 
 .caja-exc{
-	background: rgba(44,63,97,0.5);
-	max-width: 1024px;
-	margin: 50px auto;
+	background: rgba(44,63,97,0.8);
+	max-width: 1100px;
+	margin: 20px auto;
+	padding: 10px;
 }
 
-.datos-exc{
-	background: rgba(44,63,97,0.5);
-	max-width: 1024px;
+.text-exc{
+	font-weight: bold;
+	font-size: 1.1em;
+	margin: 3px 0 0 3px;
+	color: #2c3f61;
+	background:	 #d3cdcd;
+}
+
+.descrip-exc{
 	border: 1px solid #d3cdcd;
+	border-radius: 3px;
+	margin: 0 auto;
+	background:  #d3cdcd;
+}
+
+.caja-monument{
+	background: rgba(44,63,97,0.5);
+	max-width: 225px;
 	border-radius: 5px;
 	color: #d3cdcd;
-}
-
-.row-monument{
-	height:50px;
-	border:1px solid red;
+	float:left;
+	margin: 5px 5px;
 }
 
 .monument_img{
-	float:left;
 	height: 100px;
-	width: 100px;
-	margin: 5px 10px;
-	border:1px solid red;
+	width:  200px;
+	margin: 5px 5px 0 5px;;
+	border-radius: 5px;
 }
+
+.text-monument{
+	font-weight:bold;
+	color: #d3cdcd;
+	font-size: 1.1em;
+	text-align: right;
+	margin: 0 7px 3px 0;
+}
+
+.caja-button-exc{
+	margin-left:10px;
+}
+
+.button-exc, .button-reservar{
+	font-size: 1em;
+	font-variant: small-caps;
+	font-weight: bold;
+	color: #d3cdcd;
+	letter-spacing: 0.01em;
+	background: #d3cdcd;
+	color: #2c3f61; 
+	margin:5px 5px 5px 0;
+	padding: 2px 5px;
+	border-radius: 3px;
+	float: left;
+	text-align: center;
+	width: 70px;
+	
+}
+
+.button-reservar{
+	width:165px;
+	background: #bfea8f;
+	margin-top: 35px;
+}
+
 
 
 

@@ -12,7 +12,7 @@
 	</head>
 
 	<body>
-		<div class="sup"> </div>
+		<div class="row sup"> </div>
 		<header class="row">
 			<div class = "logo_img">
 				<%=image_tag("logo.png")%>
@@ -34,19 +34,20 @@
 
 			<div class="col-sm-6 menu-user">
 				<ul>
-				<%if user_signed_in? %>
-					<%= link_to current_user.name, edit_user_registration_path%>
-					<li><%= link_to "Salir", destroy_user_session_path, method: :delete %></li>
-					
-				<% else %>
-				  	<li><%= link_to "Entrar", new_user_session_path %>  </li>
-				<% end %>
+					<%if user_signed_in? %>
+						<%= link_to current_user.name, edit_user_registration_path%>
+						<li><%= link_to "Salir", destroy_user_session_path, method: :delete %></li>
+					<% else %>
+						<li><%= link_to "Entrar", new_user_session_path %>  </li>
+					<% end %>
+				</ul>
 			</div	><!-- menu user -->		
-					
+		</div>			
 
-		<div class = "fondo" class="row">
+		<div class = "fondo row">
 			<%= yield %>
 		</div>
+
 		<footer>
 			Algo para el footer
 

@@ -1,36 +1,44 @@
 <!-- Para mostrar las excursiones-->
 
 <% @excursions.each do |excursion| %>
-<div class = "caja-exc">
-    <div class = "row">
-    	<div class ="col-sm-3 datos-exc">
-	       	<%=link_to excursion.name, excursion_path(excursion), class: "enlace-excursion" %><br/>
-		    Name: <%= excursion.name %> <br/>
-		    Duration: <%= excursion.duration %> <br/>
-		    Price: <%= excursion.price %> <br/>
-		    Start: <%= excursion.start %> <br/> 
+<div class = "caja-exc container-fluid">
+    <div class = "row col-sm-12 enlace-excursion"> 									
+    	<%=link_to excursion.name, excursion_path(excursion) %>
+    </div>
 
-		    <div class = "row">
-		       <%= link_to("Edit", edit_excursion_path(excursion),  class: "btn btn-primary btn-sm") %>
-		       <%= link_to("Delete", excursion_path(excursion), class: "btn btn-primary btn-sm" ,method: :delete, data:{confirm: "Confirma que desea eliminar la excursion"}) %>
+    <div class = "row"> 
+    	<div class ="col-sm-2 datos-exc ">
+		    <div class = "text-exc"> Duracion: <%= excursion.duration %> h. </div>
+		    <div class = "text-exc"> Precio: <%= excursion.price %> €</div>
+		    <div class = "text-exc"> Fecha: <%= excursion.start %> </div>
+
+		    <div class = "row caja-button-exc">
+		    	<%if user_signed_in? && current_user.role=="guide" %>	
+			       <%= link_to("Editar", edit_excursion_path(excursion), class: "button-exc") %>
+			       
+			       <%= link_to("Eliminar", excursion_path(excursion), class: "button-exc" ,method: :delete, data:{confirm: "Confirma que desea eliminar la excursion"}) %> 
+		       	<% else%>
+
+		       <%= link_to("Reservar", excursion_path(excursion), class: "button-exc, button-reservar")%>
+		       	<% end %>
 			</div>
 		</div>
 		<% cont = 0 %>
-	    <div class ="col-sm-9">   
+	    <div class ="col-sm-10">   
 	       <% excursion.monuments.each do |monument| %>
-		       	<div class = "monument_img">
-					<%=image_tag(monument.image)%>
-					<%=monument.name%>
+		       	<div class = "caja-monument">
+			       	<div class = "monument_img"><%=image_tag(monument.image)%></div>
+					<div class = "text-monument"> <%=monument.name%> </div>	
 				</div>	
 				<%cont = cont+1%>
-				<% if cont == 6%>
+				<% if cont == 4%>
 					<%break%>
 				<% end %>	
 			<% end %>	
 		</div>	
 	</div>	
 
-	<div class = "row datos-exc descrip">
+	<div class = "row descrip-exc col-sm-12">
 		  Description: <%= excursion.description %> 
 	 </div>
 

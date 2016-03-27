@@ -15,15 +15,48 @@ puts "Loaded Guides!!!!"
 end
 puts "Loaded Turist!!!!"
 
-10.times do
-    Monument.create(
-        name: Faker::Name.name,
-        description: Faker::Lorem.paragraph,
-        image: Faker::Avatar.image("my-own-slug", "50x50", "jpg"),
-        long: Faker::Address.longitude,
-        lat: Faker::Address.latitude  
-        )
-end
+#--------------------------------------------------------------------
+Monument.create(  name: "Cibeles",description: Faker::Lorem.paragraph,
+        image: "monuments/monument1.jpg",
+        long: Faker::Address.longitude,lat: Faker::Address.latitude )
+
+Monument.create( name: "Puerta del Sol",description: Faker::Lorem.paragraph,
+        image: "monuments/monument2.jpg",
+        long: Faker::Address.longitude,lat: Faker::Address.latitude )
+
+Monument.create( name: "Palacio Real", description: Faker::Lorem.paragraph,
+        image: "monuments/monument3.jpg",
+        long: Faker::Address.longitude,lat: Faker::Address.latitude )
+
+Monument.create( name: "Plaza Mayor", description: Faker::Lorem.paragraph,
+        image: "monuments/monument4.jpg",
+        long: Faker::Address.longitude,lat: Faker::Address.latitude )
+
+Monument.create( name: "Gran Via", description: Faker::Lorem.paragraph,
+        image: "monuments/monument5.jpg",
+        long: Faker::Address.longitude,lat: Faker::Address.latitude )
+
+Monument.create( name: "Puerta de Alcala",description: Faker::Lorem.paragraph,
+        image: "monuments/monument6.jpg",
+        long: Faker::Address.longitude,lat: Faker::Address.latitude )
+
+Monument.create( name: "Metro Gran Via",description: Faker::Lorem.paragraph,
+        image: "monuments/monument7.jpg",
+        long: Faker::Address.longitude,lat: Faker::Address.latitude )
+
+Monument.create( name: "Metro Sol",description: Faker::Lorem.paragraph,
+        image: "monuments/monument8.jpg",
+        long: Faker::Address.longitude,lat: Faker::Address.latitude )
+
+Monument.create( name: "Oso y el Madroño",description: Faker::Lorem.paragraph,
+        image: "monuments/monument9.jpg",
+        long: Faker::Address.longitude,lat: Faker::Address.latitude )
+
+Monument.create( name: "Ayuntamiento",description: Faker::Lorem.paragraph,
+        image: "monuments/monument10.jpg",
+        long: Faker::Address.longitude,lat: Faker::Address.latitude )
+
+#--------------------------------------------------------------------------
 puts "Loaded Monuments!!!!"
 
 10.times do
