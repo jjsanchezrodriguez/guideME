@@ -19,7 +19,6 @@ class ExcursionsController < ApplicationController
 				@excursions = Excursion.where(start: from..to)	
 			end	
 		end
-
 	end
 
 	def show

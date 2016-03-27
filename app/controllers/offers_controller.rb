@@ -5,9 +5,13 @@ class OffersController < ApplicationController
 
   def new
     @excursions = Excursion.all.map{|excursion| [excursion.name, excursion.id]}
-     
-    @guide = current_user;
-    binding.pry
+    @guide = User.find params[:user_id]
+    @offer = Offer.new
+  end
+
+   def new_direct
+    @excursion = Excursion.find params[:excursion_id]
+    @guide = current_user
     @offer = Offer.new
   end
 
@@ -27,6 +31,6 @@ class OffersController < ApplicationController
   private
 
   def offer_params
-    params.require(:offer).permit(:excursion_id, :user_id, :language, :date, :available)
+    params.require(:offer).permit(:excursion_id, :guide_id, :language, :date, :available)
   end
 end

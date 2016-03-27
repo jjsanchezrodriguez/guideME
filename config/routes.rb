@@ -29,5 +29,8 @@ Rails.application.routes.draw do
   get  '/offers/new/:user_id' => 'offers#new'
   post '/offers' => 'offers#create'
 
+  get  '/offers/users/excursions/:excursion_id' => 'offers#new_direct'
+  
+
 
 end

@@ -24,11 +24,11 @@ class GuidesController < ApplicationController
 	end
 
 	def edit
-		@guide = Guide.find params[:id]
+		@guide = User.find params[:id]
 	end
 
 	def update
-		@guide = Guide.find params[:id]
+		@guide = User.find params[:id]
 		if @guide.update_attributes guide_params
 			flash.now[:notice] = "Guide #{@guide.name} edited!"
 			redirect_to guides_path
@@ -40,7 +40,7 @@ class GuidesController < ApplicationController
 	end
 
 	def destroy
-		@guide = Guide.find params[:id]
+		@guide = User.find params[:id]
 		@guide.destroy
 
 		flash[:notice] = "Guide #{@guide.name} destroyed!"
