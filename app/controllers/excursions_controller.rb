@@ -1,6 +1,6 @@
 class ExcursionsController < ApplicationController
 	def all
-		@excursions = Excursion.page(params[:page]).per(2)
+		@excursions = Excursion.page(params[:page]).per(3)
 		render "show_query"
 	end
 
@@ -14,9 +14,9 @@ class ExcursionsController < ApplicationController
 			if(from > to)
 				#hay que añadirlo al aplication_helper.rb en helpers
 				flash.now[:alert] = "Date Error"   
-				@excursions = Excursion.all
+				@excursions = Excursion.page(params[:page]).per(3)
 			else	
-				@excursions = Excursion.where(start: from..to)	
+				@excursions = Excursion.where(start: from..to).page(params[:page]).per(3)
 			end	
 		end
 	end

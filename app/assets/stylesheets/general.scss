@@ -38,7 +38,7 @@ img{
 
 .fondo{
 	background: #2C3F61 url("fondomadrid2.jpg"); 
-	height: 700px;
+	height: 730px;
 }
 
 hr{
@@ -63,7 +63,35 @@ hr{
 
 .paginacion{
 	text-align:right;
+	max-width: 1100px;
+ 	margin: -50px auto;
 }
+
+
+.pagination a, .pagination span.current, .pagination span.gap {
+    float: left;
+    padding: 0 14px;
+   	color: #2c3f61;
+    text-decoration: none;
+    background:  #d3cdcd;
+    border: 1px solid #DDD;
+    border-left-width: 0;
+}
+.pagination a:click{
+	color:yellow;
+}
+
+.pagination {
+    border-left: 1px solid #ddd;
+}
+
+.first, .prev, .page, .next, .last{
+	padding : 0;
+	
+	border: none;
+	font-weight:bold;
+}
+    
 
 
 

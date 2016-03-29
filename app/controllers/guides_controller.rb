@@ -1,6 +1,6 @@
 class GuidesController < ApplicationController
 	def index
-		@guides = User.where(role: "guide")
+		@guides = User.where(role: "guide").page(params[:page]).per(2)
 	end
 
 	def show

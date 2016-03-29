@@ -41,7 +41,9 @@
     </div>    
   </div>
 <% end %>
-
+<div class = "paginacion">
+  <%= paginate @guides %>
+</div>
 
   <%= link_to "Volver", root_path,class: "text-color" %>
 
