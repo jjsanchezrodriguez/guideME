@@ -1,6 +1,6 @@
 class ExcursionsController < ApplicationController
 	def all
-		@excursions = Excursion.all
+		@excursions = Excursion.page(params[:page]).per(2)
 		render "show_query"
 	end
 

@@ -38,7 +38,7 @@ gem "rails-erd"  #para comprobar el modelo
 gem "faker"		 #para los seeds
 gem "devise"
 gem 'kaminari'
-gem 'kaminari-bootstrap' #para paginar
+ #para paginar
 #gem "papeclic"
 
 
