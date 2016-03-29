@@ -3,11 +3,11 @@
 <% @excursions.each do |excursion| %>
 <div class = "caja-exc container-fluid">
     <div class = "row col-sm-12 enlace-excursion"> 									
-    	<%=link_to excursion.name, excursion_path(excursion) %>
+    	Excursion: <%=link_to excursion.name, excursion_path(excursion) %>
     </div>
 
     <div class = "row"> 
-    	<div class ="col-sm-2 datos-exc ">
+    	<div class ="col-sm-2">
     		<div class = "caja-text-exc">
 			    Duracion: <%= excursion.duration %> h. 
 			    Precio: <%= excursion.price %> €.
@@ -30,8 +30,9 @@
 			       	<div class = "monument_img"><%=image_tag(monument.image)%></div>
 					<div class = "text-monument"> <%=monument.name%> </div>	
 				</div>	
+				<!-- cont == 4 ? "break" : (cont + 1) -->
 				<%cont = cont+1%>
-				<% if cont == 4%>
+				<% if cont == 4 %>
 					<%break%>
 				<% end %>	
 			<% end %>	
@@ -40,7 +41,7 @@
 
 	<div class = "row descrip-exc col-sm-12">
 		  Description: <%= excursion.description %> 
-	 </div>
+	</div>
 
 </div>
 <% end %>

@@ -1,27 +1,67 @@
-<div class = "user-session">
+<% @guides.each do |guide| %>
+  <div class = "caja-guia container-fluid">
+    <div class = "row col-sm-12 enlace-guia">                   
+       <%= link_to guide.name, guide_path(guide) %>
+    </div>
+   
+    <div class = "row"> 
+      <div class ="col-sm-3">
+        <div class = "caja-text-guia">
+          <div class = "guia-img"><%=image_tag("guias/guia1.jpg")%></div>
+          Guia: <%= guide.name %> <br/>
+          Teléfono: <%= guide.phone %> <br/>
+          correo: <%= guide.phone %> <br/>
+        </div> 
+      </div> 
 
-  <h1 class = "tit-busq text-color">Guias</h1>
 
-  <ul>
-    <% @guides.each do |guide| %>
-      <li>
+    
+   
 
-        <%= link_to guide.name, guide_path(guide),class: "text-color" %>
         
-        <%if user_signed_in? && current_user.role=="guide" %>
-          <div class ="row">
-             <%= link_to "Nuevo",  new_guide_path, class: "text-color" %>
-             <%= link_to "Editar", edit_guide_path(guide), class: "text-color" %>
-             <%= link_to "Borrar", guide_path(guide), method: :delete, data:{confirm: "¿Estas Seguro?"}, class: "text-color" %>
-             <%= link_to "Crear una Excursión", "/offers/new/" + guide.id.to_s, class: "text-color" %> 
+          <%if user_signed_in? && current_user.role=="guide" %>
+            <div class = "row">
+               <%= link_to "Nuevo",  new_guide_path, class: "text-color" %>
+               <%= link_to "Editar", edit_guide_path(guide), class: "text-color" %>
+               <%= link_to "Borrar", guide_path(guide), method: :delete, data:{confirm: "¿Estas Seguro?"}, class: "text-color" %>
+               <%= link_to "Crear una Excursión", "/offers/new/" + guide.id.to_s, class: "text-color" %>
             </div> 
-        <% end %>  
-      </li>
-    <% end %>
-  </ul>
+          <% end %>  
+
+
+     
+
+      <div class ="col-sm-9">      
+        <% if !guide.offers.blank? %>
+          <% cont1 = 0 %>
+          <% guide.offers.each do |offer| %>
+            <%cont1 = cont1 + 1%>
+            <% if cont1 == 4 %>  <%break%>  <% end %>
+            <div class = "caja-monument">
+              <h4> Excursion: <%= offer.excursion.name %> </h4>
+              <% cont = 0 %>
+              <% offer.excursion.monuments.each do |monument| %>
+                <div class = "monument_img"><%=image_tag(monument.image)%></div>
+                  <%cont = cont + 1%>
+                  <% if cont == 1 %>  <%break%>  <% end %>
+              <% end %>
+              <li> Language: <%= offer.language %> </li>
+              <li> Date: <%= offer.date %> </li>
+              <li> Available: <%= offer.available %> </li>
+              <%= link_to("Reservar", "", class: "button-exc, button-reservar")%>
+            </div>  
+          <% end %>
+       
+        <% end %>
+   
+      </div>    
+    </div>    
+  </div>
+<% end %>
+
 
   <%= link_to "Volver", root_path,class: "text-color" %>
-</div>
+
 
 
 

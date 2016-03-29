@@ -4,7 +4,7 @@
 
 
 //index
-.user-session, .caja-busq,.caja-exc {
+.user-session, .caja-busq, .caja-exc {
 	background: rgba(44,63,97,0.7);
 	margin: 40px 0px 20px 30px;
 	padding: 2px 0px 20px 25px;
@@ -30,28 +30,29 @@
 //------------------------------------------------------------------------
 //show_query
 
-.enlace-excursion{
+.enlace-excursion, .enlace-guia{
 	font-size: 1.5em;
-	text-align: center;
+	
 	background:  #d3cdcd;
 	margin:0 auto;
 	border-radius:3px;
 } 
 
-
-.enlace-excursion a{
+.enlace-excursion a, .enlace-guia a{
 	color: #2c3f61;
 	text-decoration: none;
 } 
 
-.caja-exc{
+.caja-exc, .caja-guia{
 	background: rgba(44,63,97,0.8);
 	max-width: 1100px;
 	margin: 20px auto;
 	padding: 10px;
+	border-radius: 5px;
+	border:1px solid red;
 }
 
-.caja-text-exc{
+.caja-text-exc, .caja-text-guia{
 	font-weight: bold;
 	font-size: 1.1em;
 	margin: 3px 0 0 3px;
@@ -60,7 +61,11 @@
 	margin:10px 0 6px 10px;
 	border-radius: 3px;
 	padding: 15px 5px 15px 10px;
-	width:165px;
+	width: 165px;
+}
+
+.caja-text-guia{
+	width: 230px;
 }
 
 .descrip-exc{
@@ -80,11 +85,16 @@
 	box-shadow: 2px 2px rgba(0,0,0,0.3);
 }
 
-.monument_img{
+.monument_img, .guia-img{
 	height: 100px;
 	width:  200px;
 	margin: 5px 5px 0 5px;;
 	border-radius: 5px;
+}
+
+.guia-img{
+	height: 150px;
+	
 }
 
 .text-monument{
