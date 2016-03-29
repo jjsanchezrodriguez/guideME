@@ -1,7 +1,7 @@
 <% @guides.each do |guide| %>
   <div class = "caja-guia container-fluid">
     <div class = "row col-sm-12 enlace-guia">                   
-       <%= link_to guide.name, guide_path(guide) %>
+       <%= link_to guide.name, edit_user_registration_path %>
     </div>
    
     <div class = "row"> 
@@ -13,24 +13,7 @@
           correo: <%= guide.phone %> <br/>
         </div> 
       </div> 
-
-
-    
-   
-
-        
-          <%if user_signed_in? && current_user.role=="guide" %>
-            <div class = "row">
-               <%= link_to "Nuevo",  new_guide_path, class: "text-color" %>
-               <%= link_to "Editar", edit_guide_path(guide), class: "text-color" %>
-               <%= link_to "Borrar", guide_path(guide), method: :delete, data:{confirm: "¿Estas Seguro?"}, class: "text-color" %>
-               <%= link_to "Crear una Excursión", "/offers/new/" + guide.id.to_s, class: "text-color" %>
-            </div> 
-          <% end %>  
-
-
-     
-
+      
       <div class ="col-sm-9">      
         <% if !guide.offers.blank? %>
           <% cont1 = 0 %>

@@ -22,7 +22,8 @@ class ExcursionsController < ApplicationController
 	end
 
 	def show
-		@excursion = Excursion.find(params[:id])
+		@excursions = Excursion.find(params[:id])
+		render "show_query"
 	end
 
 	def new
