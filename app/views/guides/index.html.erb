@@ -1,36 +1,35 @@
 <% @guides.each do |guide| %>
   <div class = "caja-guia container-fluid">
     <div class = "row col-sm-12 enlace-guia">                   
-       <%= link_to guide.name, edit_user_registration_path %>
+       <%= link_to "Guide: " + guide.name, edit_user_registration_path %>
     </div>
    
     <div class = "row"> 
       <div class ="col-sm-3">
         <div class = "caja-text-guia">
           <div class = "guia-img"><%=image_tag("guias/guia1.jpg")%></div>
-          Guia: <%= guide.name %> <br/>
           Teléfono: <%= guide.phone %> <br/>
           correo: <%= guide.phone %> <br/>
         </div> 
       </div> 
       
-      <div class ="col-sm-9">      
+      <div class ="col-sm-9 text-bol">      
         <% if !guide.offers.blank? %>
           <% cont1 = 0 %>
           <% guide.offers.each do |offer| %>
             <%cont1 = cont1 + 1%>
             <% if cont1 == 4 %>  <%break%>  <% end %>
             <div class = "caja-monument">
-              <h4> Excursion: <%= offer.excursion.name %> </h4>
+              <h5 class = "text-bol"> Excursion: <%= offer.excursion.name %> </h5>
               <% cont = 0 %>
               <% offer.excursion.monuments.each do |monument| %>
                 <div class = "monument_img"><%=image_tag(monument.image)%></div>
                   <%cont = cont + 1%>
                   <% if cont == 1 %>  <%break%>  <% end %>
               <% end %>
-              <li> Language: <%= offer.language %> </li>
-              <li> Date: <%= offer.date %> </li>
-              <li> Available: <%= offer.available %> </li>
+               Idioma: <%= offer.language %> <br/>
+               Fecha: <%= offer.date %> <br/>
+               Plazas: <%= offer.available %> <br/>
               <%= link_to("Reservar", "", class: "button-exc, button-reservar")%>
             </div>  
           <% end %>
@@ -45,7 +44,6 @@
   <%= paginate @guides %>
 </div>
 
-  <%= link_to "Volver", root_path,class: "text-color" %>
 
 
 
