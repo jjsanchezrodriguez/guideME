@@ -68,6 +68,6 @@ class ExcursionsController < ApplicationController
 
 	private
 	def excursion_params
-		params.require(:excursion).permit(:name,:duration,:price,:start,:description, :monuments)
+		params.require(:excursion).permit(:name,:duration,:price,:start,:description, :available, :monuments)
 	end
 end

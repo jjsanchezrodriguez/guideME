@@ -34,13 +34,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 #-------------------------------
 gem "pry-rails"
-gem "rails-erd"  #para comprobar el modelo
-gem "faker"		 #para los seeds
-gem "devise"
-gem 'kaminari'   #para paginar
-
-#gem "papeclic"
-
+gem "rails-erd"  #comprobar el modelo
+gem "faker"		 #cargar los seeds
+gem "devise"	 # control de usuario
+gem 'kaminari'   # paginar
+gem "paperclip", "~> 5.0.0.beta1" #imagenes
 
 #-------------------------------
 

@@ -50,7 +50,8 @@ puts "Loaded Monuments!!!!"
         price: Faker::Commerce.price, 
         start: Faker::Date.forward(15),
         description: Faker::Lorem.paragraph,
-        monuments: Monument.offset(rand(1..10))
+        monuments: Monument.offset(rand(1..10)),
+        available: Faker::Number.between(1, 25)
     	)
 end
 puts "Loaded Excursions!!!!"
@@ -61,7 +62,6 @@ puts "Loaded Excursions!!!!"
         user_id: Faker::Number.between(1, 5),
         language: Faker::Address.country_code,
         date: Faker::Date.forward(15),
-        available: Faker::Number.between(1, 25)
         )
 end
 puts "Loaded Offers!!!!"

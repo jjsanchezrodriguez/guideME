@@ -31,6 +31,6 @@ class OffersController < ApplicationController
   private
 
   def offer_params
-    params.require(:offer).permit(:excursion_id, :guide_id, :language, :date, :available)
+    params.require(:offer).permit(:excursion_id, :guide_id, :language, :date)
   end
 end

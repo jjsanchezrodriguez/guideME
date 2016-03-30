@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :guides do
     resources :offers, only: [:new, :create, :edit, :update]
   end
+  
   get  '/excursions/all' =>  'excursions#all'
   resources :excursions 
 

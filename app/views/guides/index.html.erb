@@ -7,7 +7,7 @@
     <div class = "row"> 
       <div class ="col-sm-3">
         <div class = "caja-text-guia">
-          <div class = "guia-img"><%=image_tag("guias/guia1.jpg")%></div>
+          <div class = "guia-img"><%=image_tag(guide.avatar.url)%></div>
            <div class = "text-guia">Teléfono: <%= guide.phone %></div>
            <div class = "text-guia">correo: <%= guide.phone %> </div>
         </div> 
@@ -29,7 +29,6 @@
               <% end %>
                <div class = "text-exc-guia">Idioma: <%= offer.language %> </div>
                <div class = "text-exc-guia">Fecha: <%= offer.date %> </div>
-               <div class = "text-exc-guia"> Plazas: <%= offer.available %> </div>
 
               <%= link_to("Reservar", "", class: "button-exc, button-reservar")%>
             </div>  

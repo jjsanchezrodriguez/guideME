@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160319101327) do
+ActiveRecord::Schema.define(version: 20160330162018) do
 
   create_table "excursions", force: :cascade do |t|
     t.string   "name"
     t.string   "duration"
     t.float    "price"
     t.date     "start"
+    t.integer  "available"
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
@@ -54,7 +55,6 @@ ActiveRecord::Schema.define(version: 20160319101327) do
     t.integer  "user_id"
     t.string   "language"
     t.date     "date"
-    t.integer  "available"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
@@ -101,6 +101,10 @@ ActiveRecord::Schema.define(version: 20160319101327) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

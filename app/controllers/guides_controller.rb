@@ -49,6 +49,6 @@ class GuidesController < ApplicationController
 
 	private
 	def guide_params
-		params.require(:user).permit(:name,:phone,:email,:role)
+		params.require(:user).permit(:name,:phone,:email,:avatar,:role)
 	end
 end

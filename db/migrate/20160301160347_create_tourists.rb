@@ -3,7 +3,6 @@ class CreateTourists < ActiveRecord::Migration
     create_table :tourists do |t|
     	t.string :name
     	t.string :email
-
       t.timestamps null: false
     end
   end
