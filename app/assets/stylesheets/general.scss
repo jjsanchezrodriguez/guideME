@@ -61,12 +61,15 @@ hr{
 	color: #d3cdcd;
 }
 
-.paginacion{
+.paginacion, .paginacion-guia{
 	text-align:right;
 	max-width: 1100px;
  	margin: -50px auto;
 }
 
+.paginacion-guia{
+ 	margin: -25px auto;
+}
 
 .pagination a, .pagination span.current, .pagination span.gap {
     float: left;
@@ -77,18 +80,12 @@ hr{
     border: 1px solid #DDD;
     border-left-width: 0;
 }
-.pagination a:click{
-	color:yellow;
-}
 
 .pagination {
     border-left: 1px solid #ddd;
 }
 
 .first, .prev, .page, .next, .last{
-	padding : 0;
-	
-	border: none;
 	font-weight:bold;
 }
     

@@ -1,19 +1,3 @@
-10.times do
-    Guide.create(
-        name:  Faker::Name.name,
-        phone: Faker::PhoneNumber.phone_number,
-        email: Faker::Internet.email
-    	)
-end
-puts "Loaded Guides!!!!"
-
-10.times do
-	Tourist.create(
-        name:  Faker::Name.name,
-        email: Faker::Internet.email
-    	)
-end
-puts "Loaded Turist!!!!"
 
 #--------------------------------------------------------------------
 Monument.create(  name: "Cibeles",description: Faker::Lorem.paragraph,

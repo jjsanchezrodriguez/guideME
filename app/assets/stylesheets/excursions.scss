@@ -54,7 +54,6 @@
 .caja-text-exc, .caja-text-guia{
 	font-weight: bold;
 	font-size: 1.1em;
-	margin: 3px 0 0 3px;
 	color: #2c3f61;
 	background:	 #d3cdcd;
 	margin:10px 0 6px 10px;
@@ -94,16 +93,20 @@
 
 .guia-img{
 	height: 150px;
-	
 }
 
-.text-monument{
+.text-monument, .text-exc-guia{
 	font-weight:bold;
 	color: #d3cdcd;
 	font-size: 1em;
 	font-variant: small-caps;
 	text-align: right;
 	margin: 0 7px 3px 0;
+}
+
+.text-exc-guia{
+	text-align: left;
+	padding-left: 10px;	
 }
 
 .button-exc, .button-reservar, .button-ofertar{

@@ -35,7 +35,6 @@ ActiveRecord::Schema.define(version: 20160319101327) do
     t.string   "name",       null: false
     t.string   "phone",      null: false
     t.string   "email",      null: false
-    t.string   "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -66,7 +65,6 @@ ActiveRecord::Schema.define(version: 20160319101327) do
   create_table "tourists", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.string   "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -92,7 +90,6 @@ ActiveRecord::Schema.define(version: 20160319101327) do
     t.string   "encrypted_password",     default: "", null: false
     t.string   "name"
     t.string   "phone"
-    t.string   "image"
     t.string   "role"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"

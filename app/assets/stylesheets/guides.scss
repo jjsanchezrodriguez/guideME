@@ -3,7 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .button{
-	
 	font-size: 1.1em;
 	font-variant: small-caps;
 	font-weight: bold;
@@ -19,5 +18,16 @@
 .text-bol{
 	font-weight: bold;
 	padding: 2px 0 2px 2px;
+	font-variant: small-caps;
+	text-align: center;
+}
+
+.text-guia{
+	font-weight: bold;
+	font-size: 1.1em;
+	color: #2c3f61;
+	background:	 #d3cdcd;
+	margin:5px 0 0 10px;
+	border-radius: 3px;
 	font-variant: small-caps;
 }

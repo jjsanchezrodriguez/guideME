@@ -8,8 +8,8 @@
       <div class ="col-sm-3">
         <div class = "caja-text-guia">
           <div class = "guia-img"><%=image_tag("guias/guia1.jpg")%></div>
-          Teléfono: <%= guide.phone %> <br/>
-          correo: <%= guide.phone %> <br/>
+           <div class = "text-guia">Teléfono: <%= guide.phone %></div>
+           <div class = "text-guia">correo: <%= guide.phone %> </div>
         </div> 
       </div> 
       
@@ -27,9 +27,10 @@
                   <%cont = cont + 1%>
                   <% if cont == 1 %>  <%break%>  <% end %>
               <% end %>
-               Idioma: <%= offer.language %> <br/>
-               Fecha: <%= offer.date %> <br/>
-               Plazas: <%= offer.available %> <br/>
+               <div class = "text-exc-guia">Idioma: <%= offer.language %> </div>
+               <div class = "text-exc-guia">Fecha: <%= offer.date %> </div>
+               <div class = "text-exc-guia"> Plazas: <%= offer.available %> </div>
+
               <%= link_to("Reservar", "", class: "button-exc, button-reservar")%>
             </div>  
           <% end %>
@@ -40,7 +41,7 @@
     </div>    
   </div>
 <% end %>
-<div class = "paginacion">
+<div class = "paginacion-guia">
   <%= paginate @guides %>
 </div>
 
