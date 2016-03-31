@@ -1,18 +1,25 @@
 <!-- Para mostrar las excursiones-->
+									
+<%if user_signed_in? && current_user.role=="guide" %>
+	<div class = "caja-exc container-fluid">									
+		<div class = "col-sm-12"> 
+	        <%= link_to "Nueva Excursion",  new_excursion_path, class: "button" %>
+	    </div>
+	</div>
+<% end %>  
+
 <% @excursions.each do |excursion| %>
 <div class = "caja-exc container-fluid">
     <div class = "row enlace-excursion">
     	<div class = "col-sm-6 "> 									
     		<%=link_to "Excursion:" + excursion.name, excursion_path(excursion) %>
-    		
     	</div>
 
     	<div class = "col-sm-6"> 									
     		<%if user_signed_in? && current_user.role=="guide" %>
-            	
-	               <%= link_to "Nuevo",  new_excursion_path, class: "button" %>
-	               <%= link_to "Editar", edit_excursion_path(excursion), class: "button" %>
-	               <%= link_to "Borrar", excursion_path(excursion), method: :delete, data:{confirm: "¿Estas Seguro?"}, class: "button" %>
+            	            
+	               <%= link_to "Editar", edit_excursion_path(excursion), class: "button-font" %>
+	               <%= link_to "Borrar", excursion_path(excursion), method: :delete, data:{confirm: "¿Estas Seguro?"}, class: "button-font" %>
           <% end %>  
     	</div>
     </div>

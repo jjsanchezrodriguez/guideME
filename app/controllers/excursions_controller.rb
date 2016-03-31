@@ -1,6 +1,6 @@
 class ExcursionsController < ApplicationController
 	def all
-		@excursions = Excursion.page(params[:page]).per(3)
+		@excursions = Excursion.page(params[:page]).per(2)
 		render "show_query"
 	end
 
@@ -10,13 +10,13 @@ class ExcursionsController < ApplicationController
 			render 'index'
 		else	
 			from = Date.parse(params[:init_date])
-			to   = Date.parse(params[:final_date])
+			to = Date.parse(params[:final_date])
 			if(from > to)
 				#hay que añadirlo al aplication_helper.rb en helpers
 				flash.now[:alert] = "Date Error"   
 				@excursions = Excursion.page(params[:page]).per(3)
 			else	
-				@excursions = Excursion.where(start: from..to).page(params[:page]).per(3)
+				@excursions = Excursion.where(start: from..to).page(params[:page]).per(2)
 			end	
 		end
 	end
@@ -34,7 +34,9 @@ class ExcursionsController < ApplicationController
 		@excursion = Excursion.new excursion_params
 		if @excursion.save
 			flash[:notice] = "Excursion created!"
-			redirect_to @excursion #Es igual que redirect_to excursion_path(@project)
+			@excursions = Excursion.all
+			#redirect_to @excursion #Es igual que redirect_to excursion_path(@project)
+			redirect_to excursions_all_path
 		else
 			@errors = @excursion.errors.full_messages
 			flash.now[:alert] = "There was a problem creating a Excursion"
@@ -50,7 +52,7 @@ class ExcursionsController < ApplicationController
 		@excursion = Excursion.find params[:id]
 		if @excursion.update_attributes excursion_params
 			flash.now[:notice] = "Excursion #{@excursion.name} edited!"
-			redirect_to excursions_path
+			redirect_to excursions_all_path
 		else
 			@errors = @excursion.errors.full_messages
 			flash.now[:alert] = "There was a problem editing the excursion #{@excursion.name}"
@@ -63,7 +65,7 @@ class ExcursionsController < ApplicationController
 		@excursion.destroy
 
 		flash[:notice] = "Excursion #{@excursion.name} destroyed!"
-		redirect_to excursions_path
+		redirect_to excursions_all_path
 	end
 
 	private
