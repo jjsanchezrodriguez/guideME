@@ -1,5 +1,6 @@
-<div class = "main_container">
-	<%= form_for @excursion do |f|%>
+
+<div class = "user-session">
+	<%= form_for [@excursion @monuments]do |f|%>
 		<div class="name-container">
 			<%= f.label :name %>
 			<%= f.text_field :name %>
@@ -23,6 +24,12 @@
 		<div class="description-container">
 			<%= f.label :description %>
 			<%= f.text_area :description %>
+		</div>
+
+		<div class="monuments-container">
+			<%= f.label :monuments %>
+			  <%= f.select(:id, @monuments) %>
+			
 		</div>
 
 		<div class="available-container">

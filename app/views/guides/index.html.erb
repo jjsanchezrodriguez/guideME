@@ -19,27 +19,25 @@
           <% guide.offers.each do |offer| %>
             <%cont1 = cont1 + 1%>
             <% if cont1 == 4 %>  <%break%>  <% end %>
-            <div class = "caja-monument">
-              <h5 class = "text-bol"> Excursion: <%= offer.excursion.name %> </h5>
-              <% cont = 0 %>
-              <% offer.excursion.monuments.each do |monument| %>
-                <div class = "monument_img"><%=image_tag(monument.image)%></div>
-                  <%cont = cont + 1%>
-                  <% if cont == 1 %>  <%break%>  <% end %>
-              <% end %>
-               <div class = "text-exc-guia">Idioma: <%= offer.language %> </div>
-               <div class = "text-exc-guia">Fecha: <%= offer.date %> </div>
+              <div class = "caja-monument">
+                <h5 class = "text-bol"> Excursion: <%= offer.excursion.name %> </h5>
+                <% cont = 0 %>
+                <% offer.excursion.monuments.each do |monument| %>
+                  <div class = "monument_img"><%=image_tag(monument.image)%></div>
+                    <%cont = cont + 1%>
+                    <% if cont == 1 %>  <%break%>  <% end %>
+                <% end %>
+                <div class = "text-exc-guia">Idioma: <%= offer.language %> </div>
+                <div class = "text-exc-guia">Fecha: <%= offer.date %> </div>
 
-              <%= link_to("Reservar", "", class: "button-exc, button-reservar")%>
-            </div>  
+                <%= link_to("Reservar", "", class: "button-exc, button-reservar")%>
+              </div>  
+            <% end %>
           <% end %>
-       
-        <% end %>
-   
+        </div>    
       </div>    
-    </div>    
-  </div>
-<% end %>
+    </div>
+  <% end %>
 <div class = "paginacion-guia">
   <%= paginate @guides %>
 </div>

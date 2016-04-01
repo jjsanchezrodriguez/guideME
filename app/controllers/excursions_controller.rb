@@ -28,6 +28,7 @@ class ExcursionsController < ApplicationController
 
 	def new
 		@excursion = Excursion.new
+		@monumentes = Monument.all
 	end
 
 	def create
@@ -46,6 +47,7 @@ class ExcursionsController < ApplicationController
 
 	def edit
 		@excursion = Excursion.find params[:id]
+		@monuments = @escursion.monument
 	end
 
 	def update
