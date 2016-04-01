@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'registrations' }
 
   root to: "excursions#index"
-
+  post '/offers/user/:user_id/excursion/:excursion_id' => 'offers#new_create'
+  get '/offers/guide/:excursion_id' => 'offers#new_direct'
+ 
   resources :offers
   resources :guides do
     resources :offers, only: [:new, :create, :edit, :update]
@@ -28,9 +30,9 @@ Rails.application.routes.draw do
   post '/excursions/date' => 'excursions#show_query'
   
   get  '/offers/new/:user_id' => 'offers#new'
-  post '/offers' => 'offers#create'
+ 
 
-  get  '/offers/users/excursions/:excursion_id', to: 'offers#new_direct'
+  
 
   
  # get '/patients/:id', to: 'patients#show', as: 'patient'

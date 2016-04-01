@@ -5,22 +5,43 @@ class OffersController < ApplicationController
 
   def new
     @excursions = Excursion.all.map{|excursion| [excursion.name, excursion.id]}
-    @guide = User.find params[:user_id]
+    @user = User.find params[:user_id]
     @offer = Offer.new
   end
 
-   def new_direct
+  def new_direct
     @excursion = Excursion.find params[:excursion_id]
-    @guide = current_user
+    @user = current_user
     @offer = Offer.new
+    binding.pry
+    if @offer.create(offer_params)
+        flash[:notice] = "Offer created!"
+        redirect_to @user
+    else
+      @errors = @offer.errors.full_messages
+      flash.now[:alert] = "There was a problem creating a Offer"
+      render 'new'
+    end
+    render "new_direct"
   end
+
+  def new_create
+     @user = current_user
+    if @user.offers.create(offer_params)
+        flash[:notice] = "Offer created!"
+        redirect_to @user
+    else
+      @errors = @offer.errors.full_messages
+      flash.now[:alert] = "There was a problem creating a Offer"
+      render 'new'
+    end
+  end  
 
   def create
-    binding.pry
-    @guide = User.find params[:guide_id]
-    if @guide.offers.create(offer_params)
+    @user = User.find params[:user_id]
+    if @user.offers.create(offer_params)
       flash[:notice] = "Offer created!"
-      redirect_to @guide
+      redirect_to @user
     else
       @errors = @offer.errors.full_messages
       flash.now[:alert] = "There was a problem creating a Offer"
@@ -29,8 +50,7 @@ class OffersController < ApplicationController
   end
 
   private
-
   def offer_params
-    params.require(:offer).permit(:excursion_id, :guide_id, :language, :date)
+    params.require(:offer).permit(:language, :date, :excursion_id, :user_id)
   end
 end

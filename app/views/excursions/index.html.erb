@@ -7,13 +7,12 @@
 <!-- para consultar las excursiones entre dos fechas -->
   <%= form_tag excursions_date_path,  class: "form-group", method: "post"  do %>
     <div class = "row">  
-
       <span  class= "col-sm-6 ">
         <%= label_tag("Fecha Inicio" ) %>
       </span>
 
       <span  class= "col-sm-6 " >
-      <%= label_tag("Fecha Fin") %>
+        <%= label_tag("Fecha Fin") %>
       </span>
     </div> 
 
@@ -23,7 +22,7 @@
       </span>
 
       <span  class= "col-sm-6">
-      <%= date_field_tag(:final_date) %> 
+        <%= date_field_tag(:final_date) %> 
       </span>
     </div> 
    

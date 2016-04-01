@@ -34,7 +34,7 @@
 
 		    <div class = "row caja-button-exc">
 		    	<%if user_signed_in? && current_user.role=="guide" %>	
-			       <%= link_to("Ofertar", "/offers/users/excursions/" + excursion.id.to_s, class: "button-exc, button-ofertar")%>
+			       <%= link_to("Ofertar", "/offers/guide/" + excursion.id.to_s, class: "button-exc, button-ofertar")%>
 		       	<% else%>
 		       		<%= link_to("Reservar", excursion_path(excursion), class: "button-exc, button-reservar")%>
 		       	<% end %>

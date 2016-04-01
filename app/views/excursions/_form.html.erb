@@ -1,6 +1,7 @@
 
 <div class = "user-session">
-	<%= form_for [@excursion @monuments]do |f|%>
+	<%= form_for @excursion do |f|%>
+	 
 		<div class="name-container">
 			<%= f.label :name %>
 			<%= f.text_field :name %>
@@ -28,14 +29,12 @@
 
 		<div class="monuments-container">
 			<%= f.label :monuments %>
-			  <%= f.select(:id, @monuments) %>
-			
+			<--! f.text :monument -->
 		</div>
 
 		<div class="available-container">
             <%= f.label("Availables Places") %>
             <%= f.select(:available, 1..20) %>
-
         </div>
 
 		<%= f.submit "Submit" %>

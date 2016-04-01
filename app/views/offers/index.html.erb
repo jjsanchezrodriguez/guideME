@@ -1,10 +1,13 @@
+
 <h1>Offers</h1>
 
 <ul>
   <% @offers.each do |offer| %>
-    <li>     <%=  offer.excusion_id %>   </li>
-    <li>     <%=  offer.guide_id %>   </li>
+  <div class = "caja-exc container-fluid">	
+    <li>     <%=  offer.excursion_id %>   </li>
+    <li>     <%=  offer.user_id %>   </li>
     <li>     <%=  offer.language %>   </li>
     <li>     <%=  offer.date %>   </li>
+    </div>
   <% end %>
 </ul>
