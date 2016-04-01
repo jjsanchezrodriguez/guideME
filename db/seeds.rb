@@ -50,7 +50,7 @@ puts "Loaded Monuments!!!!"
         price: Faker::Commerce.price, 
         start: Faker::Date.forward(15),
         description: Faker::Lorem.paragraph,
-        monuments: Monument.offset(rand(1..10)),
+        monuments: Monument.offset(rand(1..5)),
         available: Faker::Number.between(1, 25)
     	)
 end
