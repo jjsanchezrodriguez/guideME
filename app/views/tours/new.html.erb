@@ -1,0 +1,25 @@
+<div> <%= @tourist.name %> </div>
+	
+<%= form_for [@excursion,@offer] do |f|%>
+
+   
+	<div class="excursion-container">
+		<%= f.label :Excursion %>
+		<%= f.text_field :excursion_id %>
+	</div>
+	
+	<div class="guide-container">
+		<%= f.label :Guia %>
+		<%= f.text_field :guide_id %>
+	</div>
+
+	<div class="name-container">
+		<%= f.label :Turista %>
+		<%= f.text_field :tourist_id %>
+	</div>
+    
+
+  
+    <%= submit_tag("Create Tour!!!") %>
+<% end %>
+
