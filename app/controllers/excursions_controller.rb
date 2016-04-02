@@ -1,4 +1,9 @@
 class ExcursionsController < ApplicationController
+	def index
+		@guides = Guide.all
+		@excursions = Excursion.all
+	end
+
 	def all
 		@excursions = Excursion.page(params[:page]).per(2)
 		render "show_query"
@@ -28,7 +33,6 @@ class ExcursionsController < ApplicationController
 
 	def new
 		@excursion = Excursion.new
-		@monuments = Monument.all
 	end
 
 	def create

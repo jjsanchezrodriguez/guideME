@@ -12,7 +12,11 @@ Rails.application.routes.draw do
   end
   
   get  '/excursions/all' =>  'excursions#all'
-  resources :excursions 
+  resources :excursions do
+    resources :offers, only: [:new, :create, :edit, :update] do 
+      resource :tours
+    end
+  end
 
 
   resources :tourists do
@@ -27,15 +31,10 @@ Rails.application.routes.draw do
   #   end    
   # end
   
-  post '/excursions/date' => 'excursions#show_query'
+  post '/excursions/date' => 'excursions#show_query'  
+  post '/guide/myshow/:guide_id' => 'guide#show_guide'
   
   get  '/offers/new/:user_id' => 'offers#new'
- 
-
-  
-
-  
- # get '/patients/:id', to: 'patients#show', as: 'patient'
 
 
 end

@@ -1,7 +1,7 @@
 <div class = "user-session text-color">
     <div> <%= @user.name %> </div>
     <%= form_tag "/offers/user/" + current_user.id.to_s + "/excursion/" + @excursion.id.to_s,  class: "form-group", method: "post"  do %>
-     <div class="language-container">
+        <div class="language-container">
            
          <%= label_tag("Languaje") %>
          <%= text_field_tag(:language) %> 

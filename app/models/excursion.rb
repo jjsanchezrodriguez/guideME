@@ -10,4 +10,8 @@ class Excursion < ActiveRecord::Base
 	has_many :users, :through => :offers
 
 	has_and_belongs_to_many :monuments
+
+	def monuments_limited(number)
+		monuments.limit(number)
+	end
 end

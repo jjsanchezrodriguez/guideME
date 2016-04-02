@@ -1,5 +1,4 @@
-<!-- Para mostrar las excursiones-->
-									
+<!-- Para mostrar las excursiones-->								
 <%if user_signed_in? && current_user.role=="guide" %>
 	<div class = "caja-exc container-fluid">									
 		<div class = "col-sm-12"> 
@@ -14,13 +13,6 @@
     	<div class = "col-sm-6 "> 									
     		<%=link_to "Excursion:" + excursion.name, excursion_path(excursion) %>
     	</div>
-
-    	<div class = "col-sm-6"> 									
-    		<%if user_signed_in? && current_user.role=="guide" %>      
-               <%= link_to "Editar", edit_excursion_path(excursion), class: "button-font" %>
-               <%= link_to "Borrar", excursion_path(excursion), method: :delete, data:{confirm: "¿Estas Seguro?"}, class: "button-font" %>
-         	<% end %>  
-    	</div>
     </div>
 
     <div class = "row"> 
@@ -34,32 +26,38 @@
 
 		    <div class = "row caja-button-exc">
 		    	<%if user_signed_in? && current_user.role=="guide" %>	
-			       <%= link_to("Ofertar", "/offers/guide/" + excursion.id.to_s, class: "button-exc, button-ofertar")%>
-		       	<% else%>
-		       		<%= link_to("Reservar", excursion_path(excursion), class: "button-exc, button-reservar")%>
+			       <%= link_to("Ofertar", new_excursion_offer_path(excursion), class: "button-exc, button-ofertar")%>
 		       	<% end %>
 			</div>
 		</div>
 
-		<% cont = 0 %>
 	    <div class ="col-sm-10">   
-	       <% excursion.monuments.each do |monument| %>
+	       <% excursion.monuments_limited(4).each do |monument| %>
 		       	<div class = "caja-monument">
 			       	<div class = "monument_img"><%=image_tag(monument.image)%></div>
 					<div class = "text-monument"> <%=monument.name%> </div>	
-				</div>	
-				<!-- cont == 4 ? "break" : (cont + 1) -->
-				<%cont = cont+1%>
-				<% if cont == 4 %>
-					<%break%>
-				<% end %>	
+				</div>		
 			<% end %>	
 		</div>	
 	</div>	
 
-	<div class = "row descrip-exc col-sm-12">
-		  Description: <%= excursion.description %> 
-	</div>
+	
+	<% excursion.offers.each do |offer| %>
+	 	<div class = "row descrip-exc col-sm-12">
+	 		
+		  	Idioma: <%= offer.language %> 
+		  	Fecha: <%= offer.date %> 
+		  	Guia: <%= offer.user_id %> 
+		  	Guia: <%= offer.excursion_id %> 
+		  
+
+		  	<%if user_signed_in? && current_user.role=="tourist" %>	 
+   				<%=link_to("Reservar", new_excursion_offer_tours_path(offer.excursion_id,offer.user_id), class: "button-exc, button-reservar")%>
+
+		  <% end %>
+	  	</div>
+	<%end%>
+	
 
 </div>
 <% end %>

@@ -4,9 +4,10 @@ class OffersController < ApplicationController
   end
 
   def new
-    @excursions = Excursion.all.map{|excursion| [excursion.name, excursion.id]}
-    @user = User.find params[:user_id]
+    @excursion = Excursion.find(params[:excursion_id])
+    @user = current_user
     @offer = Offer.new
+    @excursions_list = Excursion.all.map{|excursion| [excursion.name, excursion.id]}
   end
 
   def new_direct
@@ -38,10 +39,10 @@ class OffersController < ApplicationController
   end  
 
   def create
-    @user = User.find params[:user_id]
+    @user = current_user
     if @user.offers.create(offer_params)
       flash[:notice] = "Offer created!"
-      redirect_to @user
+      redirect_to guides_path
     else
       @errors = @offer.errors.full_messages
       flash.now[:alert] = "There was a problem creating a Offer"
@@ -51,6 +52,6 @@ class OffersController < ApplicationController
 
   private
   def offer_params
-    params.require(:offer).permit(:language, :date, :excursion_id, :user_id)
+    params.require(:offer).permit(:language, :date, :excursion_id)
   end
 end

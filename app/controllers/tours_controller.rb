@@ -1,13 +1,11 @@
 class ToursController < ApplicationController
   def new
-    @tourist = Tourist.find params[:tourist_id]
-    @tour = @tourist.tours.new
-
-    @all_offers =  Offer.all.map{|offer| [offer.excursion_id, offer.guide_id]}
+    @tourist = current_user
+    @tour = Tour.new
   end
 
   def create
-     @tourist = Tourist.find params[:tourist_id]
+     
     
     # respond_to do |format|
     #   if @tourist.tour.create(tour_params)
