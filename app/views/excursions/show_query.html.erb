@@ -21,7 +21,7 @@
 			    Duracion: <%= excursion.duration %> h. 
 			    Precio: <%= excursion.price %> €.
 			    <%if user_signed_in? && current_user.role=="tourist" %>	 
-   					<%=link_to("Todas Opiniones", tours_path, class: "button-exc, button-reservar")%>
+   					<%=link_to("Recorrido", tours_path, class: "button-exc, button-reservar")%>
 		       	<% end %>
 			</div>
 

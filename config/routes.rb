@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   end
 
   resources :tours do
-    resources :excrusions, only: [:new, :create, :edit, :update, :show]
+    resources :excursions, only: [:new, :create, :edit, :update, :show]
   end
   
   get  '/excursions/all' =>  'excursions#all'
@@ -27,9 +27,10 @@ Rails.application.routes.draw do
   resources :tourists do
     resources :tours, only: [:index, :new, :create]
   end
-
+  
 
   get "/excursions/:excursion_id/guides/:guide_id/tours_opinion", to: "tours#opinion", as: "excursion_guide_tours_opinion"
+  get "/tourist/tour/show_excursion_tourist", to: "tours#show_tourist_tour", as: "tourist_tour_show"
     
   post '/excursions/date', to: 'excursions#show_query'  
   post '/guide/myshow/:guide_id' => 'guide#show_guide'

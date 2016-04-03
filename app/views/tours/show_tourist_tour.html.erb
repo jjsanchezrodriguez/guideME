@@ -9,8 +9,10 @@
     <div class = "row"> 
     	<div class ="col-sm-12">
     		<div class = "caja-text enlace-excursion">
-			    ID del Guia <%= tour.guide_id %> <br>
-			    ID del Excursion <%= tour.excursion_id %> <br>
+			    ID del Turista <%= tour.tourist_id %> <%= tour.tourist.name %> <br>
+			    ID del Guia <%= tour.guide_id %>  <br>
+			    ID del Excursion <%= tour.excursion_id %>  <%= tour.excursion.name %><br>
+		
 			    Puntos del Guia <%= tour.guide_point %> <br>
 			    Puntos de la Excursion: <%= tour.excursion_point %> <br>
 			    Opinion Guia: <%= tour.guide_description %> <br>

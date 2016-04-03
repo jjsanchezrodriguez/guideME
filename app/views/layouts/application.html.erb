@@ -29,6 +29,9 @@
 					<li><%= link_to "Inicio", root_path %></li>
 					<li><%= link_to "Excursiones", excursions_all_path %></li>
 					<li><%= link_to "Guias", guides_path %></li>
+					<%if user_signed_in? && current_user.role=="tourist" %>	 
+   						<li><%= link_to "Turistas", tourist_tour_show_path %></li>
+		 			<% end %>
 				</ul>  
 			</nav><!-- fin menu -->	
 
