@@ -1,0 +1,20 @@
+<div class = "notice">
+    <%= display_flash_message%>
+</div>
+
+<% @tours.each do |tour| %>
+<div class = "caja-exc container-fluid">
+    
+
+    <div class = "row"> 
+    	<div class ="col-sm-12">
+    		<div class = "caja-text enlace-excursion">
+			    Puntos del Gui <%= tour.guide_point %> <br>
+			    Puntos de la Excursion: <%= tour.excursion_point %> <br>
+			    Opinion Guia: <%= tour.guide_description %> <br>
+			    Opinion Excursion: <%= tour.excursion_description %> <br>
+			</div>
+		</div>
+	</div>
+</div>
+<% end %>

@@ -1,15 +1,18 @@
 class ToursController < ApplicationController
   def index
+
+  end  
+
+  def opinion
     @tours = Tour.all
   end 
 
   def new
     @offer = Offer.find(params[:offer_id])
-    binding.pry
     Tour.create( excursion_id: @offer.excursion_id,
                  guide_id: @offer.user_id,
                  tourist_id: current_user.id )
-      redirect_to root_path
+    redirect_to root_path
   end
 
   def create
@@ -18,7 +21,7 @@ class ToursController < ApplicationController
       flash[:notice] = "Tour created!"
       redirect_to root_path
     else
-      @errors = @tourist.tours.full_messages
+      @errors = @tours.full_messages
       flash.now[:alert] = "There was a problem creating a Tour"
       render 'new'
     end

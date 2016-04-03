@@ -28,15 +28,10 @@ Rails.application.routes.draw do
     resources :tours, only: [:index, :new, :create]
   end
 
-  #   resources :tourists do
-  #   resources :guides, only: [:index,:new] do
-  #     resources :excursions, only:[:index,:new]do
-  #       resources :tours, only: [:index, :new, :create, :edit, :update]
-  #     end  
-  #   end    
-  # end
-  
-  post '/excursions/date' => 'excursions#show_query'  
+
+  get "/excursions/:excursion_id/guides/:guide_id/tours_opinion", to: "tours#opinion", as: "excursion_guide_tours_opinion"
+    
+  post '/excursions/date', to: 'excursions#show_query'  
   post '/guide/myshow/:guide_id' => 'guide#show_guide'
   
   get  '/offers/new/:user_id' => 'offers#new'
