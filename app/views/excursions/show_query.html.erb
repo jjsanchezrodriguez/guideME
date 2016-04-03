@@ -20,8 +20,9 @@
     		<div class = "caja-text-exc">
 			    Duracion: <%= excursion.duration %> h. 
 			    Precio: <%= excursion.price %> €.
-			    Fecha: <%= excursion.start %> 
-			    Disponible: <%= excursion.available %>  Plazas
+			    <%if user_signed_in? && current_user.role=="tourist" %>	 
+   					<%=link_to("Todas Opiniones", tours_path, class: "button-exc, button-reservar")%>
+		       	<% end %>
 			</div>
 
 		    <div class = "row caja-button-exc">
@@ -47,12 +48,15 @@
 	 		
 		  	Idioma: <%= offer.language %> 
 		  	Fecha: <%= offer.date %> 
-		  	Guia: <%= offer.user %> 
 		  
+		  	Guia: <%= offer.user %> 
 		  
 
 		  	<%if user_signed_in? && current_user.role=="tourist" %>	 
    				<%=link_to("Reservar", new_excursion_offer_tours_path(offer.excursion_id,offer.user_id), class: "button-exc, button-reservar")%>
+
+   				<%=link_to("Opiniones", new_excursion_offer_tours_path(offer.excursion_id,offer.user_id), class: "button-exc, button-reservar")%>
+
 
 		  <% end %>
 	  	</div>

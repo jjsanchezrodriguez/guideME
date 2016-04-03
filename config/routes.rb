@@ -7,8 +7,13 @@ Rails.application.routes.draw do
   get '/offers/guide/:excursion_id' => 'offers#new_direct'
  
   resources :offers
+
   resources :guides do
     resources :offers, only: [:new, :create, :edit, :update]
+  end
+
+  resources :tours do
+    resources :excrusions, only: [:new, :create, :edit, :update, :show]
   end
   
   get  '/excursions/all' =>  'excursions#all'
