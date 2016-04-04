@@ -49,8 +49,8 @@
 		  	Idioma: <%= offer.language %> 
 		  	Fecha: <%= offer.date %> 
 		  
-		  	Guia: <%= offer.user %> 
-		  
+		  	Guia: <%= offer.user.id %> 
+		  	Guia: <%= offer.user.name %> 
 
 		  	<%if user_signed_in? && current_user.role=="tourist" %>	 
    				<%=link_to("Reservar", new_excursion_offer_tours_path(offer.excursion_id, offer.user_id), class: "button-exc, button-reservar")%>

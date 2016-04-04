@@ -12,7 +12,7 @@ body{
 
 header{
 	height: 100px;
-	background:  #d3cdcd;
+	background: #d3cdcd;
 }	
 
 .logo_img{
@@ -89,6 +89,42 @@ hr{
 	font-weight:bold;
 }
     
+.button-registrar{
+	float:right;
+}    
+
+.caja-registrar{
+	width:600px;
+}
+
+.caja-menu-admin{
+	text-align: center;	
+}
+
+.sup-caja-admin{
+	background: #d3cdcd;
+	max-width: 1100px;
+	margin: 0px auto;
+	padding: 4px;
+	border-radius: 5px 5px 0 0 ;
+	margin-bottom:10px;
+	font-size: 2em;
+	font-variant: small-caps;
+	font-weight: bold;
+	color: #2c3f61;
+	text-align:center;
+	
+}
+.caja-admin{
+	padding: 0px;
+	border-radius: 5px 5px 0 0 ;
+}
+
+.row-excursion{
+	border-bottom: 0.11em solid #d3cdcd;
+	margin: 5px;	
+	padding-bottom: 7px;
+}
 
 
 

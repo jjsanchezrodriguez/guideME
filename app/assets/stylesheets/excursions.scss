@@ -43,7 +43,7 @@
 	text-decoration: none;
 } 
 
-.caja-exc, .caja-guia{
+.caja-exc, .caja-guia, .caja-registrar, .caja-menu-admin, .caja-admin, .sup-caja-admin{
 	background: rgba(44,63,97,0.8);
 	max-width: 1100px;
 	margin: 15px auto;
@@ -95,10 +95,9 @@
 	height: 150px;
 }
 
-.text-monument, .text-exc-guia{
+.text-monument, .text-exc-guia, .text-excursion{
 	font-weight:bold;
 	color: #d3cdcd;
-	font-size: 1em;
 	font-variant: small-caps;
 	text-align: right;
 	margin: 0 7px 3px 0;
@@ -109,7 +108,17 @@
 	padding-left: 10px;	
 }
 
-.button-exc, .button-reservar, .button-ofertar{
+.text-excursion{
+	text-align: left;
+	padding-left: 10px;	
+	font-size: 1.2em;
+}
+
+.text-excursion:hover{
+	color: #d3cdcd;
+}
+
+.button-exc, .button-reservar, .button-ofertar, .button-registrar{
 	font-variant: small-caps;
 	font-weight: bold;
 	letter-spacing: 0.01em;
@@ -129,6 +138,34 @@
 .button-ofertar{
 	background: #f29696;
 }
+
+.row-excursion{
+	margin-bottom: 3px;
+}
+
+.text-field{
+	border-radius: 5px;
+	font-weight: bold;
+	color: #2c3f61;
+}
+
+.text-field-name{
+	width: 250px;
+}
+
+.text-field-number{
+	width: 75px;
+}
+
+.text-field-area{
+	width: 600px;
+	height: 200px;
+}
+
+.inf-caja-admin{
+	text-align: center;
+}
+
 
 
 

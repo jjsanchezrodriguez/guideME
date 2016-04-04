@@ -1,45 +1,51 @@
-
-<div class = "user-session">
-	<%= form_for @excursion do |f|%>
+<%= form_for @excursion do |f|%>
 	 
-		<div class="name-container">
-			<%= f.label :name %>
-			<%= f.text_field :name %>
-		</div>
-
-		<div class="duration-container">
-			<%= f.label :duration %>
-			<%= f.select :duration, 1..10 %> <span>hours</span>
-		</div>
-
-		<div class="price-container">
-			<%= f.label :price %>
-			<%= f.number_field :price %>
-		</div>
-
-		<div class="start-container">
-			<%= f.label :start %>
-			<%= f.date_field :start %>
-		</div>
-
-		<div class="description-container">
-			<%= f.label :description %>
-			<%= f.text_area :description %>
-		</div>
-
-		<div class="monuments-container">
-			<%= f.label :monuments %>
-			<--! f.text :monument -->
-		</div>
-
-		<div class="available-container">
-            <%= f.label("Availables Places") %>
-            <%= f.select(:available, 1..20) %>
+	<div class = "row row-excursion">
+        <div class = "col-sm-2"> </div>
+        <div class = "col-sm-2"> 
+            <%= f.label :Nombre, class: "text-excursion" %>
+        </div>    
+        <div class = "col-sm-7">    
+            <%= f.text_field :name, class: "text-field text-field-name" %>
         </div>
+    </div>  
 
-		<%= f.submit "Submit" %>
-	<%end%>
+     <div class = "row row-excursion">
+        <div class = "col-sm-2"> </div>
+        <div class = "col-sm-2">  
+            <%= f.label :duration, class: "text-excursion" %>
+        </div>    
+        <div class = "col-sm-7">    
+            <%= f.select :duration, 1..10, class: "text-field text-field-name" %>  <span>horas.</span>
+        </div>
+    </div>  
+
+    <div class = "row row-excursion">
+        <div class = "col-sm-2"> </div>
+        <div class = "col-sm-2"> 
+            <%= f.label :precio, class: "text-excursion" %>
+        </div>    
+        <div class = "col-sm-7">    
+            <%= f.number_field :price, class: "text-field text-field-number" %>
+        </div>
+    </div>  
+
+    <div class = "row row-excursion">
+        <div class = "col-sm-2"> </div>
+        <div class = "col-sm-2"> 
+            <%= f.label :descripción, class: "text-excursion" %>
+        </div>    
+        <div class = "col-sm-7">    
+            <%= f.text_area :description, class: "text-field text-field-area" %>
+        </div>
+    </div> 
+    <div class = "inf-caja-admin"> 
+		<%= f.submit "Guardar", class: "btn btn-xs button" %>
+	</div>
+	
+<%end%>
+		
 
 
-	<%= link_to "Atrás", root_path %>
-</div>	
+	
+       

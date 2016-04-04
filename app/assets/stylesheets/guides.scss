@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.button, .button-font{
+.button, .button-font, .button-admin{
 	font-size: 1.1em;
 	font-variant: small-caps;
 	font-weight: bold;
@@ -13,6 +13,12 @@
 	margin: 5px 40px 10px 0;
 	padding: 2px 10px;
 	border-radius: 3px;
+}
+
+.button-admin{
+	width: 120px;
+	margin: 0px 10px 0px 0;
+	padding: 0px 0px;
 }
 
 .button-font{

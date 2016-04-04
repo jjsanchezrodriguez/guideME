@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   post '/offers/user/:user_id/excursion/:excursion_id' => 'offers#new_create'
   get '/offers/guide/:excursion_id' => 'offers#new_direct'
  
-  resources :offers
+  resources :offers  
+
+  resources :monuments
 
   resources :guides do
     resources :offers, only: [:new, :create, :edit, :update]
@@ -36,6 +38,8 @@ Rails.application.routes.draw do
   post '/guide/myshow/:guide_id' => 'guide#show_guide'
   
   get  '/offers/new/:user_id' => 'offers#new'
+
+  get "/excursion_admin", to: "excursions#index_admin", as: "excursions_admin"
 
 
 end

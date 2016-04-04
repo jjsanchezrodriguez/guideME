@@ -1,11 +1,9 @@
+<div class = "caja-registrar container-fluid">
 
-<div class = "user-session">
   <h2 class = "tit-busq text-color">Registro Usuario </h2>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
-     
-    <%= f.file_field :avatar %>
 
       <%= f.label :Nombre, class: "text-color" %> <br />
       <%= f.text_field :name,  autofocus: true, class: "name-container fondo-container" %>
@@ -17,8 +15,7 @@
 
     <div>
       <%= f.label :Role, class: "text-color" %> <br />
-     
-        <%= f.select(:role, ["guide", "tourist"], class: "fondo-container") %> 
+      <%= f.select(:role, ["guide", "tourist", "admin"] ) %> 
     </div>
 
     <div>
@@ -38,10 +35,12 @@
       <%= f.label :Password_confirmacion, class: "text-color"  %><br />
       <%= f.password_field :password_confirmation, autocomplete: "off", class: " pass-container fondo-container"  %>
     </div>
-
-    <div class="button-entrar">
-      <%= f.submit "Registrarse" %>
+    <div>
+      <br>
+      <%= f.file_field :avatar %>
     </div>
+      <%= f.submit "Registrarse", class: "button-registrar" %>
+   
   <% end %>
 
   

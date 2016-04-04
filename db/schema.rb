@@ -17,8 +17,6 @@ ActiveRecord::Schema.define(version: 20160330162018) do
     t.string   "name"
     t.string   "duration"
     t.float    "price"
-    t.date     "start"
-    t.integer  "available"
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
@@ -55,6 +53,7 @@ ActiveRecord::Schema.define(version: 20160330162018) do
     t.integer  "user_id"
     t.string   "language"
     t.date     "date"
+    t.integer  "available"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end

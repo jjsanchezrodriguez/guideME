@@ -29,8 +29,14 @@
 					<li><%= link_to "Inicio", root_path %></li>
 					<li><%= link_to "Excursiones", excursions_all_path %></li>
 					<li><%= link_to "Guias", guides_path %></li>
+
 					<%if user_signed_in? && current_user.role=="tourist" %>	 
    						<li><%= link_to "Turistas", tourist_tour_show_path %></li>
+		 			<% end %>
+
+		 			<%if user_signed_in? && current_user.role=="admin" %>	
+		 				<li><%= link_to "Turistas", tourist_tour_show_path %></li> 
+   						<li><%= link_to "Admin"%></li>
 		 			<% end %>
 				</ul>  
 			</nav><!-- fin menu -->	
@@ -47,7 +53,21 @@
 			</div	><!-- menu user -->		
 		</div>			
 
+
 		<div class = "fondo row">
+
+			<%if user_signed_in? && current_user.role=="admin" %>
+			<div class = "caja-menu-admin container-fluid">									
+				<div class = "col-sm-12"> 
+			        <%= link_to "Excursiones",  excursions_admin_path, class: "btn btn-xs button-admin" %>
+			        <%= link_to "Monumentos",  monuments_path, class: "btn btn-xs button-admin" %>
+			        <%= link_to "Ofertas",  offers_path, class: "btn btn-xs button-admin" %>
+			        <%= link_to "Tours",  tours_path, class: "btn btn-xs button-admin" %>
+			        <%= link_to "Guías",  guides_path, class: "btn btn-xs button-admin" %>
+			        <%= link_to "Turistas",  tourists_path, class: "btn btn-xs button-admin" %>
+			    </div>
+			</div>
+		<% end %>  
 			<%= yield %>
 		</div>
 

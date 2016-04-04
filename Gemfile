@@ -40,6 +40,7 @@ gem "faker"		 #cargar los seeds
 gem "devise"	 # control de usuario
 gem 'kaminari'   # paginar
 gem "paperclip", "~> 5.0.0.beta1" #imagenes
+gem 'bootstrap_form'
 
 #-------------------------------
 

@@ -20,7 +20,7 @@ class ToursController < ApplicationController
   end
 
   def show_tourist_tour
-    @tours = Tour.where(tourist_id:current_user.id).page(params[:page]).per(2)
+    @tours = Tour.where(tourist_id: current_user.id)
   end
 
   def create

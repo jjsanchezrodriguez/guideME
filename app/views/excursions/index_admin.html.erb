@@ -1,0 +1,16 @@
+<div class="caja-admin container-fluid">
+	<div class="sup-caja-admin container-fluid">Excursiones</div>
+		<% @excursions.each do |excursion| %>
+			<div class = "row row-excursion">
+				<div class = "col-sm-2"> </div>
+				<div class = "col-sm-3">	
+				  	<%= link_to  excursion.name, excursion_path(excursion), class: "text-excursion" %>
+				</div>
+				<div class = "col-sm-5">  	
+			       	<%= link_to "Nuevo", new_excursion_path, class: "btn btn-xs button-admin" %>
+			       	<%= link_to "Editar", edit_excursion_path(excursion), class: "btn btn-xs button-admin" %>
+			      	<%= link_to "Borrar", excursion_path(excursion), method: :delete, data:{confirm: "Are you sure?"}, class: "btn btn-xs button-admin" %>
+			    </div>    	
+	       	</div>
+		<% end %>
+</div>

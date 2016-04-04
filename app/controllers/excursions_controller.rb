@@ -4,6 +4,11 @@ class ExcursionsController < ApplicationController
 		@excursions = Excursion.all
 	end
 
+	def index_admin
+		@excursions = Excursion.all
+
+	end
+
 	def all
 		@excursions = Excursion.page(params[:page]).per(2)
 		render "show_query"
@@ -27,8 +32,7 @@ class ExcursionsController < ApplicationController
 	end
 
 	def show
-		@excursions = Excursion.find(params[:id])
-		render "show_query"
+		@excursion = Excursion.find(params[:id])
 	end
 
 	def new
@@ -41,7 +45,7 @@ class ExcursionsController < ApplicationController
 			flash[:notice] = "Excursion created!"
 			@excursions = Excursion.all
 			#redirect_to @excursion #Es igual que redirect_to excursion_path(@project)
-			redirect_to excursions_all_path
+			redirect_to excursions_admin_path
 		else
 			@errors = @excursion.errors.full_messages
 			flash.now[:alert] = "There was a problem creating a Excursion"
@@ -57,7 +61,7 @@ class ExcursionsController < ApplicationController
 		@excursion = Excursion.find params[:id]
 		if @excursion.update_attributes excursion_params
 			flash.now[:notice] = "Excursion #{@excursion.name} edited!"
-			redirect_to excursions_all_path
+			redirect_to excursions_admin_path
 		else
 			@errors = @excursion.errors.full_messages
 			flash.now[:alert] = "There was a problem editing the excursion #{@excursion.name}"
@@ -70,7 +74,7 @@ class ExcursionsController < ApplicationController
 		@excursion.destroy
 
 		flash[:notice] = "Excursion #{@excursion.name} destroyed!"
-		redirect_to excursions_all_path
+		redirect_to excursions_admin_path
 	end
 
 	private
