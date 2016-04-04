@@ -1,6 +1,6 @@
 class MonumentsController < ApplicationController
 	def index
-		@monuments = Monument.all
+		@monuments = Monument.all.page(params[:page]).per(12)
 	end
 
 	def show
@@ -8,12 +8,11 @@ class MonumentsController < ApplicationController
 	end
 
 	def new
-		@monument = Monument.new
-		
+		@monument = Monument.new	
 	end
 
 	def create
-		@monuments = Monument.new monument_params
+		@monument = Monument.new monument_params
 		if @monument.save
 			flash[:notice] = "Monument created!"
 			redirect_to @monument 

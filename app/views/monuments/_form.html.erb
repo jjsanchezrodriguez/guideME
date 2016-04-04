@@ -1,0 +1,60 @@
+<%= form_for @monument do |f|%>
+	 
+	<div class = "row row-excursion">
+        <div class = "col-sm-2"> </div>
+        <div class = "col-sm-2"> 
+            <%= f.label :Nombre, class: "text-excursion" %>
+        </div>    
+        <div class = "col-sm-7">    
+            <%= f.text_field :name, class: "text-field text-field-name" %>
+        </div>
+    </div>  
+
+      <div class = "row row-excursion">
+        <div class = "col-sm-2"> </div>
+        <div class = "col-sm-2"> 
+            <%= f.label :Descripción, class: "text-excursion" %>
+        </div>    
+        <div class = "col-sm-7">    
+            <%= f.text_area :description, class: "text-field text-field-area" %>
+        </div>
+    </div> 
+
+     <div class = "row row-excursion">
+        <div class = "col-sm-2"> </div>
+        <div class = "col-sm-2">  
+            <%= f.label :Longitud, class: "text-excursion" %>
+        </div>    
+        <div class = "col-sm-7">    
+            <%= f.text_field :long, class: "text-field text-field-name" %> 
+        </div>
+    </div>  
+
+    <div class = "row row-excursion">
+        <div class = "col-sm-2"> </div>
+        <div class = "col-sm-2"> 
+            <%= f.label :Latitud, class: "text-excursion" %>
+        </div>    
+        <div class = "col-sm-7">    
+           <%= f.text_field :lat, class: "text-field text-field-name" %>
+        </div>
+    </div>  
+
+     <div class = "row row-excursion">
+        <div class = "col-sm-2"> </div>
+        <div class = "col-sm-2"> 
+            <%= f.label :Cargar_Imagen, class: "text-excursion" %>
+        </div>    
+        <div class = "col-sm-7">    
+           <%= f.file_field :avatar , class: "text-field text-field-name" %>
+        </div>
+    </div>  
+   
+  
+    <div class = "inf-caja-admin"> 
+		<%= f.submit "Guardar", class: "btn btn-xs button" %>
+	</div>
+	
+<%end%>
+		
+    

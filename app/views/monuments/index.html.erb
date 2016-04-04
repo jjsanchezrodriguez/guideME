@@ -1,0 +1,24 @@
+<div class = "notice">
+    <%= display_flash_message%>
+</div>
+
+<div class="caja-admin container-fluid">
+	<div class="sup-caja-admin container-fluid">Monumentos</div>
+		<% @monuments.each do |monument| %>
+			<div class = "row row-excursion">
+				<div class = "col-sm-2"> </div>
+				<div class = "col-sm-3">	
+				  	<%= link_to  monument.name, monument_path(monument), class: "text-excursion" %>
+				</div>
+				<div class = "col-sm-5">  	
+			       	<%= link_to "Nuevo", new_monument_path, class: "btn btn-xs button-admin" %>
+			       	<%= link_to "Editar", edit_monument_path(monument), class: "btn btn-xs button-admin" %>
+			      	<%= link_to "Borrar", monument_path(monument), method: :delete, data:{confirm: "Are you sure?"}, class: "btn btn-xs button-admin" %>
+			    </div>    	
+	       	</div>
+		<% end %>
+</div>
+
+<div class = "paginacion">
+	<%= paginate @monuments %>
+</div>

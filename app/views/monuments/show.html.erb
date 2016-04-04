@@ -1,0 +1,78 @@
+<div class="caja-admin container-fluid">
+    <div class="sup-caja-admin container-fluid">Monumento:  <%= @monument.name %> </div>
+    <div class = "row">
+        <div class = "col-sm-8">
+            <div class = "row row-excursion">
+                <div class = "col-sm-2">  
+                    <div class = "text-excursion"> ID.: </div> 
+                </div>    
+                <div class = "col-sm-7">    
+                    <div class = "text-excursion"> <%= @monument.id %> </div>
+                </div>
+            </div>   
+
+             <div class = "row row-excursion">
+                <div class = "col-sm-2">  
+                    <div class = "text-excursion"> Nombre: </div> 
+                </div>    
+                <div class = "col-sm-7">    
+                    <div class = "text-excursion"> <%= @monument.name %> </div>
+                </div>
+            </div>  
+
+             <div class = "row row-excursion">
+                <div class = "col-sm-2">  
+                    <div class = "text-excursion">Descripción: </div>    
+                </div>    
+
+                <div class = "col-sm-10">    
+                    <div class = "text-excursion"> <%= @monument.description %>  </div>
+                </div>
+            </div>
+
+            <div class = "row row-excursion">
+                <div class = "col-sm-2">
+                    <div class = "text-excursion"> Longitud: </div> 
+                </div>    
+                <div class = "col-sm-7">    
+                    <div class = "text-excursion">  <%= @monument.long %> </div>
+                </div>
+            </div> 
+
+            <div class = "row row-excursion">
+                <div class = "col-sm-2">  
+                    <div class = "text-excursion">Latitud: </div> 
+                </div>    
+                <div class = "col-sm-7">    
+                    <div class = "text-excursion"> <%= @monument.lat %> </div>
+                </div>
+            </div> 
+
+            <div class = "row row-excursion">
+                <div class = "col-sm-2">  
+                    <div class = "text-excursion">Creación: </div>    
+                </div>    
+
+                <div class = "col-sm-7">    
+                    <div class = "text-excursion"> <%= @monument.created_at %>  </div>
+                </div>
+            </div>  
+
+            <div class = "row row-excursion">
+                <div class = "col-sm-2">  
+                    <div class = "text-excursion">Modificación: </div>    
+                </div>    
+
+                <div class = "col-sm-7">    
+                    <div class = "text-excursion"> <%= @monument.updated_at %>  </div>
+                </div>
+            </div> 
+        </div> 
+        <div class = "col-sm-4 fondo-monument-img-admin">
+            <div class = "monument-img-admin"><%=image_tag(@monument.image)%></div>
+        </div>     
+    </div>               
+</div>
+
+   
+   

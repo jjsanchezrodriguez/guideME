@@ -6,7 +6,6 @@ class ExcursionsController < ApplicationController
 
 	def index_admin
 		@excursions = Excursion.all.page(params[:page]).per(12)
-
 	end
 
 	def all
