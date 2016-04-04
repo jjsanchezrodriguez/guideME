@@ -1,3 +1,7 @@
+<div class = "notice">
+    <%= display_flash_message%>
+</div>
+
 <div class="caja-admin container-fluid">
 	<div class="sup-caja-admin container-fluid">Excursiones</div>
 		<% @excursions.each do |excursion| %>
@@ -13,4 +17,8 @@
 			    </div>    	
 	       	</div>
 		<% end %>
+</div>
+
+<div class = "paginacion">
+	<%= paginate @excursions %>
 </div>

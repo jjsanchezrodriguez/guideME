@@ -3,6 +3,10 @@ class GuidesController < ApplicationController
 		@guides = User.where(role: "guide").page(params[:page]).per(2)
 	end
 
+	def index_admin
+		@guides = User.where(role: "guide").page(params[:page]).per(5)
+	end
+
 	def show
 		@guide = User.find(params[:id])
 	end
@@ -15,7 +19,7 @@ class GuidesController < ApplicationController
 		@guide = User.new guide_params
 		if @guide.save
 			flash[:notice] = "Guide created!"
-			redirect_to @guide 
+			redirect_to guides_admin_path 
 		else
 			@errors = @guide.errors.full_messages
 			flash.now[:alert] = "There was a problem creating a Guide"
@@ -31,7 +35,7 @@ class GuidesController < ApplicationController
 		@guide = User.find params[:id]
 		if @guide.update_attributes guide_params
 			flash.now[:notice] = "Guide #{@guide.name} edited!"
-			redirect_to guides_path
+			redirect_to guides_admin_path
 		else
 			@errors = @guide.errors.full_messages
 			flash.now[:alert] = "There was a problem editing guide #{@guide.name}"
@@ -42,9 +46,8 @@ class GuidesController < ApplicationController
 	def destroy
 		@guide = User.find params[:id]
 		@guide.destroy
-
 		flash[:notice] = "Guide #{@guide.name} destroyed!"
-		redirect_to guides_path
+		redirect_to guides_admin_path
 	end
 
 	private

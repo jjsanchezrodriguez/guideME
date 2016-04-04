@@ -1,18 +1,47 @@
+
 <%= form_for @guide do |f|%>
-	<div class="name-container">
-		<%= f.label :name %>
-		<%= f.text_field :name %>
-	</div>
+	 
+	<div class = "row row-excursion">
+        <div class = "col-sm-2"> </div>
+        <div class = "col-sm-2"> 
+            <%= f.label :Nombre, class: "text-excursion" %>
+        </div>    
+        <div class = "col-sm-7">    
+            <%= f.text_field :name, class: "text-field text-field-name" %>
+        </div>
+    </div>  
 
-	<div class="phone-container">
-		<%= f.label :phone %>
-		<%= f.text_field :phone %>
-	</div>
+     <div class = "row row-excursion">
+        <div class = "col-sm-2"> </div>
+        <div class = "col-sm-2">  
+            <%= f.label :Teléfono, class: "text-excursion" %>
+        </div>    
+        <div class = "col-sm-7">    
+            <%= f.telephone_field :phone, class: "text-field text-field-tele" %>  <span>horas.</span>
+        </div>
+    </div>  
 
-	<div class="email-container">
-		<%= f.label :email %>
-		<%= f.text_field :email %>
-	</div>
+    <div class = "row row-excursion">
+        <div class = "col-sm-2"> </div>
+        <div class = "col-sm-2"> 
+            <%= f.label :Correo, class: "text-excursion" %>
+        </div>    
+        <div class = "col-sm-7">    
+            <%= f.email_field :email, class: "text-field text-field-name" %>
+        </div>
+    </div>  
 
-	<%= f.submit "Submit" %>
+    <div class = "row row-excursion">
+        <div class = "col-sm-2"> </div>
+        <div class = "col-sm-2"> 
+            <%= f.label :descripción, class: "text-excursion" %>
+        </div>    
+        <div class = "col-sm-7">    
+            <%= f.text_area :description, class: "text-field text-field-area" %>
+        </div>
+    </div> 
+    <div class = "inf-caja-admin"> 
+		<%= f.submit "Guardar", class: "btn btn-xs button" %>
+	</div>
+	
 <%end%>

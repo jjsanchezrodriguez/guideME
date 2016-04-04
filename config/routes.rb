@@ -40,6 +40,7 @@ Rails.application.routes.draw do
   get  '/offers/new/:user_id' => 'offers#new'
 
   get "/excursion_admin", to: "excursions#index_admin", as: "excursions_admin"
+  get "/guide_admin", to: "guides#index_admin", as: "guides_admin"
 
 
 end

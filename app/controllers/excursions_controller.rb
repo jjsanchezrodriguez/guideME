@@ -5,7 +5,7 @@ class ExcursionsController < ApplicationController
 	end
 
 	def index_admin
-		@excursions = Excursion.all
+		@excursions = Excursion.all.page(params[:page]).per(12)
 
 	end
 
