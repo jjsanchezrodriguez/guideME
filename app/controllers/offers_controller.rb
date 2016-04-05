@@ -1,6 +1,6 @@
 class OffersController < ApplicationController
   def index
-    @offers = Offer.all
+    @offers = Offer.all.page(params[:page]).per(12)
   end
 
   def new

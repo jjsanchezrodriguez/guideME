@@ -1,13 +1,26 @@
 
-<h1>Offers</h1>
+<div class = "notice">
+    <%= display_flash_message%>
+</div>
 
-<ul>
-  <% @offers.each do |offer| %>
-  <div class = "caja-exc container-fluid">	
-    <li>     <%=  offer.excursion_id %>   </li>
-    <li>     <%=  offer.user_id %>   </li>
-    <li>     <%=  offer.language %>   </li>
-    <li>     <%=  offer.date %>   </li>
-    </div>
-  <% end %>
-</ul>
+<div class="caja-admin container-fluid">
+	<div class="sup-caja-admin container-fluid">Ofertas</div>
+		<% @offers.each do |offer| %>
+			<div class = "row row-excursion">
+				<div class = "col-sm-1"> </div>
+				<div class = "col-sm-4">	
+				  	<%= link_to offer.excursion.name, offer_path(offer), class: "text-excursion" %>
+				  	<%= link_to offer.user.name, offer_path(offer), class: "text-excursion" %>
+				</div>
+				<div class = "col-sm-5">  	
+			       	<%= link_to "Nuevo", new_offer_path, class: "btn btn-xs button-admin" %>
+			       	<%= link_to "Editar", edit_offer_path(offer), class: "btn btn-xs button-admin" %>
+			      	<%= link_to "Borrar", offer_path(offer), method: :delete, data:{confirm: "Are you sure?"}, class: "btn btn-xs button-admin" %>
+			    </div>    	
+	       	</div>
+		<% end %>
+</div>
+
+<div class = "paginacion">
+	<%= paginate @offers %>
+</div>
