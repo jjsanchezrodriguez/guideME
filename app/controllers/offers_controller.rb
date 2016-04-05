@@ -10,6 +10,14 @@ class OffersController < ApplicationController
     @excursions_list = Excursion.all.map{|excursion| [excursion.name, excursion.id]}
   end
 
+  def new_admin
+    @offer = Offer.new
+  end
+
+  def show
+     @offer = Offer.find(params[:id])
+  end
+
   def new_direct
     @excursion = Excursion.find params[:excursion_id]
     @user = current_user

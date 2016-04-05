@@ -1,12 +1,100 @@
-<h1>Offers</h1>
+<div class="caja-admin container-fluid">
+    <div class="sup-caja-admin container-fluid">Oferta:  <%= @offer.user_id %> </div>
 
-<ul>
-  <% @offers.each do |offer| %>
-  <div class = "caja-exc container-fluid">	
-    <li>     <%=  offer.excursion_id %>   </li>
-    <li>     <%=  offer.user_id %>   </li>
-    <li>     <%=  offer.language %>   </li>
-    <li>     <%=  offer.date %>   </li>
+    <div class = "row row-excursion">
+        <div class = "col-sm-2"> </div>
+        <div class = "col-sm-2">  
+            <div class = "text-excursion"> ID. Oferta: </div> 
+        </div>    
+        <div class = "col-sm-7">    
+            <div class = "text-excursion"> <%= @offer.id %> </div>
+        </div>
+    </div>   
+
+     <div class = "row row-excursion">
+        <div class = "col-sm-2"> </div>
+        <div class = "col-sm-2">  
+            <div class = "text-excursion"> Guía: </div> 
+        </div>    
+        <div class = "col-sm-7">    
+            <div class = "text-excursion">
+            	<%= @offer.user_id %> 
+                <%= @offer.user.name %> 
+            </div>
+        </div>
+    </div> 
+
+   <div class = "row row-excursion">
+        <div class = "col-sm-2"> </div>
+        <div class = "col-sm-2">  
+            <div class = "text-excursion"> Excursión: </div> 
+        </div>    
+        <div class = "col-sm-7">    
+            <div class = "text-excursion">
+            	<%= @offer.excursion_id %> 
+                <%= @offer.excursion.name %> 
+            </div>
+        </div>
+    </div>  
+
+    <div class = "row row-excursion">
+        <div class = "col-sm-2"> </div>
+        <div class = "col-sm-2">  
+            <div class = "text-excursion">Idioma: </div> 
+        </div>    
+        <div class = "col-sm-7">    
+            <div class = "text-excursion"> <%= @offer.language %> </div>
+        </div>
+    </div> 
+
+    <div class = "row row-excursion">
+        <div class = "col-sm-2"> </div>
+        <div class = "col-sm-2">  
+            <div class = "text-excursion">Fecha: </div>    
+        </div>    
+
+        <div class = "col-sm-7">    
+            <div class = "text-excursion"> <%= @offer.date %>  </div>
+        </div>
     </div>
-  <% end %>
-</ul>
+
+    <div class = "row row-excursion">
+        <div class = "col-sm-2"> </div>
+        <div class = "col-sm-2">  
+            <div class = "text-excursion">Plazas: </div>    
+        </div>    
+
+        <div class = "col-sm-7">    
+            <div class = "text-excursion"> <%= @offer.available %>  </div>
+        </div>
+    </div>
+
+    <div class = "row row-excursion">
+        <div class = "col-sm-2"> </div>
+        <div class = "col-sm-2">  
+            <div class = "text-excursion">F. Creación: </div>    
+        </div>    
+
+        <div class = "col-sm-7">    
+            <div class = "text-excursion"> <%= @offer.created_at %>  </div>
+        </div>
+    </div>  
+
+    <div class = "row row-excursion">
+        <div class = "col-sm-2"> </div>
+        <div class = "col-sm-2">  
+            <div class = "text-excursion">F. Modificación: </div>    
+        </div>    
+
+        <div class = "col-sm-7">    
+            <div class = "text-excursion"> <%= @offer.updated_at %>  </div>
+        </div>
+    </div>    
+
+      
+              
+</div>
+
+
+   
+   

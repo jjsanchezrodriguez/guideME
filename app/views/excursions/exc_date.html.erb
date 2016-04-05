@@ -1,0 +1,56 @@
+<div class = "caja-exc container-fluid">
+
+    <div class = "row enlace-excursion">
+    	<div class = "col-sm-6 "> 									
+    		<%=link_to "Excursion:" + @excursion.name, excursion_path(@excursion) %>
+    	</div>
+    </div>
+
+    <div class = "row"> 
+    	<div class ="col-sm-2">
+    		<div class = "caja-text-exc">
+			    Duracion: <%= @excursion.duration %> h. 
+			    Precio: <%= @excursion.price %> €.
+			    <%if user_signed_in? && current_user.role=="tourist" %>	 
+   					<%=link_to("Recorrido", tours_path, class: "button-exc, button-reservar")%>
+		       	<% end %>
+			</div>
+
+		    <div class = "row caja-button-exc">
+		    	<%if user_signed_in? && current_user.role=="guide" %>	
+			       <%= link_to("Ofertar", new_excursion_offer_path(excursion), class: "button-exc, button-ofertar")%>
+		       	<% end %>
+			</div>
+		</div>
+
+	    <div class ="col-sm-10">   
+	       <% @excursion.monuments_limited(4).each do |monument| %>
+		       	<div class = "caja-monument">
+			       	<div class = "monument_img"><%=image_tag(monument.image)%></div>
+					<div class = "text-monument"> <%=monument.name%> </div>	
+				</div>		
+			<% end %>	
+		</div>	
+	</div>	
+
+	
+	<% @excursion.offers.each do |offer| %>
+	 	<div class = "row descrip-exc col-sm-12">
+	 		
+		  	Idioma: <%= offer.language %> 
+		  	Fecha: <%= offer.date %> 
+		  
+		  	Guia: <%= offer.user.id %> 
+		  	Guia: <%= offer.user.name %> 
+
+		  	<%if user_signed_in? && current_user.role=="tourist" %>	 
+   				<%=link_to("Reservar", new_excursion_offer_tours_path(offer.excursion_id, offer.user_id), class: "button-exc, button-reservar")%>
+
+   				
+
+		  <% end %>
+	  	</div>
+	<%end%>
+	
+
+</div>

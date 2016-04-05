@@ -30,7 +30,7 @@
                 <div class = "text-exc-guia">Idioma: <%= offer.language %> </div>
                 <div class = "text-exc-guia">Fecha: <%= offer.date %> </div>
 
-                <%= link_to("Reservar", "", class: "button-exc, button-reservar")%>
+                <%= link_to("Reservar", excursions_date_path(offer.excursion_id), class: "button-exc, button-reservar")%>
               </div>  
             <% end %>
           <% end %>

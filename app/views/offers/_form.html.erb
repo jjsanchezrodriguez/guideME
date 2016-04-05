@@ -1,0 +1,63 @@
+<%= form_for @offer do |f|%>
+	 
+    <div class = "row row-excursion">
+        <div class = "col-sm-2"> </div>
+        <div class = "col-sm-2"> 
+            <%= f.label :Guía, class: "text-excursion" %>
+        </div>    
+        <div class = "col-sm-7">    
+            <%= f.text_field :user_id, class: "text-field text-field-name" %>
+        </div>
+    </div> 
+
+    <div class = "row row-excursion">
+        <div class = "col-sm-2"> </div>
+        <div class = "col-sm-2"> 
+            <%= f.label :Excursión, class: "text-excursion" %>
+        </div>    
+        <div class = "col-sm-7">    
+            <%= f.text_field :excursion_id, class: "text-field text-field-name" %>
+        </div>
+    </div>  
+
+    <div class = "row row-excursion">
+        <div class = "col-sm-2"> </div>
+        <div class = "col-sm-2"> 
+            <%= f.label :Idioma, class: "text-excursion" %>
+        </div>    
+        <div class = "col-sm-7">    
+            <%= f.text_field :language, class: "text-field text-field-name" %>
+        </div>
+    </div>  
+
+    <div class = "row row-excursion">
+        <div class = "col-sm-2"> </div>
+        <div class = "col-sm-2"> 
+            <%= f.label :Fecha, class: "text-excursion" %>
+        </div>    
+        <div class = "col-sm-7">    
+            <%= f.text_field :date, class: "text-field text-field-name" %>
+        </div>
+    </div>   
+
+    <div class = "row row-excursion">
+        <div class = "col-sm-2"> </div>
+        <div class = "col-sm-2"> 
+            <%= f.label :Plazas, class: "text-excursion" %>
+        </div>    
+        <div class = "col-sm-7">    
+            <%= f.number_field :available, class: "text-field text-field-number" %>
+        </div>
+    </div>  
+
+
+    <div class = "inf-caja-admin"> 
+		<%= f.submit "Guardar", class: "btn btn-xs button" %>
+	</div>
+	
+<%end%>
+		
+
+
+	
+       

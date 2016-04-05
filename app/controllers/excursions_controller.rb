@@ -8,6 +8,10 @@ class ExcursionsController < ApplicationController
 		@excursions = Excursion.all.page(params[:page]).per(12)
 	end
 
+	def exc_date
+		@excursion = Excursion.find(params[:excursion_id])
+	end
+
 	def all
 		@excursions = Excursion.page(params[:page]).per(2)
 		render "show_query"
